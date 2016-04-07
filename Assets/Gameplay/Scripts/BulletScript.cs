@@ -26,6 +26,10 @@ public class BulletScript : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Destroys a floor after 0.02 sec.
+	/// </summary>
+	/// <param name="destroyable">The destroyable to destroy.</param>
 	IEnumerator RemoveFloor (GameObject destroyable)
 	{
 		yield return new WaitForSeconds (0.02f);
