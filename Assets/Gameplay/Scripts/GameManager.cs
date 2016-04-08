@@ -21,10 +21,12 @@ public class GameManager : MonoBehaviour
 {
 	public float gamePlayQuickenRate = 0.01f;
 	public float maxGamePlaySpeed = 2f;
+	public Floor[] _floorPrefabs;
 
 	public static bool isPlaying;
 	public static bool isFinished;
 	public static float gamePlaySpeed;
+	public static Dictionary<Floor.Type, Floor> floorPrefabs;
 	public static List<Floor> floors; /*!< A list of all floors which we have spawned
 										* regardless of whether or not they are currently active in the scene.\n
 										* A floor is never destroyed, a floor is just being set as inactive and reused later.
@@ -41,6 +43,14 @@ public class GameManager : MonoBehaviour
 		isFinished = false;
 		gamePlaySpeed = 1.0f;
 		floors = new List<Floor> (100);
+		floorPrefabs = new Dictionary<Floor.Type, Floor> (10);
+		foreach (Floor floor in _floorPrefabs)
+		{
+			if (!floorPrefabs.ContainsKey (floor.type))
+				floorPrefabs.Add (floor.type, floor);
+			else
+				Debug.LogError ("Key " + floor.type + " already exists. Floor name: " + floor.name);
+		}
 	}
 
 	//! We update the rate at which the gameplay is going every frame if the user is playing
@@ -55,39 +65,34 @@ public class GameManager : MonoBehaviour
 	}
 
 	//! Adds a new floor to the list
-	public static void AddFloor (GameObject floor)
+	public static void AddFloor (Floor.Type floorType, Vector3 position)
 	{
-		floors.Add (floor.GetComponent<Floor> ());
-	}
-
-	//! Adds a new floor to the list
-	public static void AddFloor (MoveOnY floor)
-	{
-		floors.Add (floor.GetComponent<Floor> ());
-	}
-
-	//! Adds a new floor to the list
-	public static void AddFloor (Floor floor)
-	{
-		floors.Add (floor);
+		Debug.Log ("Adding a " + floorType + " floor at position " + position.x);
+		foreach (Floor floor in floors)
+		{
+			if (!floor.gameObject.activeSelf && floor.type == floorType)
+			{
+				floor.gameObject.SetActive (true);
+				floor.transform.position = position;
+				return;
+			}
+		}
+		Floor newFloor;
+		if (floorPrefabs.TryGetValue (floorType, out newFloor))
+			floors.Add (newFloor);
+		else Debug.LogError ("Floor.Type " + floorType + "was not found!");
 	}
 
 	//! Removes a floor from the list and destroys it
 	public static void RemoveFloor (GameObject floor)
 	{
-		if (floor == null)
-			return;
-		Floor moveOnY = floor.GetComponent<Floor> ();
-		if (moveOnY != null)
-			floors.Remove (floor.GetComponent<Floor> ());
-		Destroy (floor);
+		RemoveFloor (floor.GetComponent<Floor> ());
 	}
 
 	//! Removes a floor from the list and destroys it
 	public static void RemoveFloor (Floor floor)
 	{
-		floors.Remove (floor);
-		Destroy (floor.gameObject);
+		floor.gameObject.SetActive (false);
 	}
 
 	//! Stops everything withing the gameplay

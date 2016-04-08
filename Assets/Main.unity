@@ -114,6 +114,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gamePlayQuickenRate: 0.01
   maxGamePlaySpeed: 2
+  _floorPrefabs:
+  - {fileID: 11457670, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
+  - {fileID: 11471300, guid: f3031946d41cba444945bef31effb7f4, type: 2}
+  - {fileID: 11491420, guid: 5ad3659e9c1323e45aec545e7fcf584d, type: 2}
+  - {fileID: 11448998, guid: bd60b1795be03974c84f8d45f1610156, type: 2}
+  - {fileID: 11405944, guid: 656d4a9bf1ca5ea4ab6c904806b4c170, type: 2}
 --- !u!4 &642441872
 Transform:
   m_ObjectHideFlags: 0
@@ -534,15 +540,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   targets:
-  - target: {fileID: 107144, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
+  - type: 0
     probability: 98
-  - target: {fileID: 152190, guid: 5ad3659e9c1323e45aec545e7fcf584d, type: 2}
+  - type: 0
     probability: 0.5
-  - target: {fileID: 109444, guid: 656d4a9bf1ca5ea4ab6c904806b4c170, type: 2}
+  - type: 0
     probability: 0.5
-  - target: {fileID: 162470, guid: f3031946d41cba444945bef31effb7f4, type: 2}
+  - type: 0
     probability: 10
-  - target: {fileID: 170726, guid: bd60b1795be03974c84f8d45f1610156, type: 2}
+  - type: 0
     probability: 0.5
   intervals: 1.75
   positions:

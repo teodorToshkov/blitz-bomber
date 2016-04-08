@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 233fe98b056dc974bb0bbc798c149dac, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 3
   moveOnY: {fileID: 0}
   radius: 5
   time: 1

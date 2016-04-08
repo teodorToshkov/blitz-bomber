@@ -22,7 +22,7 @@ public class Floor : MonoBehaviour {
 	};
 
 	[SerializeField]
-	public const Type type = Floor.Type.Regular; //!< holds information about the type of __Floor__ we are looking at
+	public Type type = Floor.Type.Regular; //!< holds information about the type of __Floor__ we are looking at
 
 	[HideInInspector]
 	public MoveOnY moveOnY; //!< a reference to the __MoveOnY__ component of the __GameObject__

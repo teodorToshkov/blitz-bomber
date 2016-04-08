@@ -129,6 +129,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 971215c7a2fae7847806df004e97eb66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 2
   moveOnY: {fileID: 0}
   targetTag: Destroyer
   destroyedFloor: {fileID: 107144, guid: 78242f62f10999e4ba3b38d932440407, type: 2}
