@@ -2,7 +2,7 @@
 using System.Collections;
 
 /*! \brief A script which is responsible for managing the way the bullets interact with other objects
- * 		   but not for its movement, for that we use MoveOnY.cs
+ * 		   but not for its movement, for that we use MoveOnY
  */
 public class BulletScript : MonoBehaviour
 {

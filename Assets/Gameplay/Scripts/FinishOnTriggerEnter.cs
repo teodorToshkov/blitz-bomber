@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/*! FinishOnTriggerEnter.cs
- * 
- * \brief This script makes the game session finish when a floor reaches the "Dropper"
+/*! \brief This script makes the game session finish when a floor reaches the "Dropper"
  */
 public class FinishOnTriggerEnter : MonoBehaviour
 {

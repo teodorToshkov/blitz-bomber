@@ -1,9 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 
-/*! OnClickSpawner.cs
- * 
- * \brief This script Spawns an instance of an object when the screen is touched/clicked.
+/*! \brief This script Spawns an instance of an object when the screen is touched/clicked.
  * 
  * It also has some timeout before it can spawn again after spawnig an instance of the given GameOnject
  */
