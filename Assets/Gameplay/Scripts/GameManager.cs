@@ -13,20 +13,17 @@ using System.Collections.Generic;
  * 	- what the current speed at which the gameplay is going is.
  * 
  * It stores a list of all floors, where we control how the floors are added/removed from the scene.
- * 		
- * 
- * \todo Implemet the function ShowResult
  */
 public class GameManager : MonoBehaviour
 {
-	public float gamePlayQuickenRate = 0.01f;
-	public float maxGamePlaySpeed = 2f;
-	public Floor[] _floorPrefabs;
+	public float gamePlayQuickenRate = 0.01f;	//!< the rate at which the gameplay quickens
+	public float maxGamePlaySpeed = 2f;			//!< the maximum speedm the gameplay can reach
+	public Floor[] _floorPrefabs;				//!< __Prefabs__ of all floors we could instantiate
 
-	public static bool isPlaying;
-	public static bool isFinished;
-	public static float gamePlaySpeed;
-	public static Dictionary<Floor.Type, Floor> floorPrefabs;
+	public static bool isPlaying;				//!< stores information whether the player playing or not
+	public static bool isFinished;				//!< stores information whether the gameplay has or not reached an end i.e. the game is over
+	public static float gamePlaySpeed;			//!< the current speed of the gameplay, which is being increased through time
+	public static Dictionary<Floor.Type, Floor> floorPrefabs; //!< a static __Dictionary__ representation of **_floorPrefabs**
 	public static List<Floor> floors; /*!< A list of all floors which we have spawned
 										* regardless of whether or not they are currently active in the scene.\n
 										* A floor is never destroyed, a floor is just being set as inactive and reused later.
@@ -64,11 +61,20 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	/// <summary>
+	/// Returns the floor at a given index.
+	/// </summary>
+	/// <returns>The floor.</returns>
+	/// <param name="index">Index.</param>
 	public static Floor GetFloor (int index)
 	{
 		return floors [index];
 	}
 
+	/// <summary>
+	/// Picks a random active floor.
+	/// </summary>
+	/// <returns>The random floor.</returns>
 	public static Floor GetRandomFloor ()
 	{
 		int rand = Random.Range (0, floors.Count - 1);
@@ -79,7 +85,11 @@ public class GameManager : MonoBehaviour
 		return floors[0];
 	}
 
-	//! Adds a new floor to the list
+	/// <summary>
+	/// Adds a new floor to the list.
+	/// </summary>
+	/// <param name="floorType">Floor type.</param>
+	/// <param name="position">Position at which to spawn the floor</param>
 	public static void AddFloor (Floor.Type floorType, Vector3 position)
 	{
 		foreach (Floor floor in floors)

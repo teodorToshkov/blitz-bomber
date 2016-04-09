@@ -6,7 +6,7 @@ using System.Collections;
 */
 public class DestroyFloorOnTriggerEnter : MonoBehaviour
 {
-
+	//! Destroys __Floors__ upon trigger
 	void OnTriggerEnter (Collider other)
 	{
 		Floor floor = other.GetComponent <Floor> ();

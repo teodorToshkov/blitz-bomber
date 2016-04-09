@@ -13,6 +13,13 @@ public class LightningFloorScript : Floor
 	public GameObject destroyedFloor; //!< A __GameObject__ we will spawn on the places of the ones which are destroyed from the lightning
 
 	//! We 'cast a lightning' downwards
+	/*!
+	 We loop pick a random Floor and if its position on the __y__ axis is less than that of our last destroyed Floor, we check if there is
+	 a Floor between the the two. If there is, we destroy the Floor which is in the way, otherwise we destroy the one we picked randomly.\n
+	 This continues until the 'bottom' __Floors__ have been reached.
+
+	 Note: In order to prevent the posibility of an infinate loop, we set a limit of 30 iterations.
+	*/
 	public override void OnDestruction ()
 	{
 		// We store a counter in order to prevent an infinate loop in case the algorithm fails

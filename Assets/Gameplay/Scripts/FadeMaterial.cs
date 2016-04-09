@@ -5,14 +5,14 @@ using System.Collections;
  */
 public class FadeMaterial : MonoBehaviour
 {
-	public float startOpacity = 1;
-	public float speed = 1;
+	public float startOpacity = 1;	//!< the initial opacity of the __GameObject__
+	public float speed = 1;			//!< the rate at which we are going to fade the opacity of the material of the __GameObject__
 
-	private Vector3 targetScale;
-	private Material material;
-	private Renderer render;
-	private Color color;
+	private Material material;		//!< stores the __Renderer__ of the __GameObject__
+	private Renderer render;		//!< stores the __Renderer__ of the __GameObject__
+	private Color color;			//!< stores the color we currently have
 
+	//! We initialize our variables
 	void Start ()
 	{
 		render = GetComponent<Renderer> ();
@@ -23,7 +23,7 @@ public class FadeMaterial : MonoBehaviour
 		render.material = material;
 	}
 
-	// Update is called once per frame
+	//! Lerps the alpha of the material towards 0
 	void Update ()
 	{
 		color.a = Mathf.Lerp (color.a, 0, speed * GameManager.gamePlaySpeed * Time.deltaTime);
