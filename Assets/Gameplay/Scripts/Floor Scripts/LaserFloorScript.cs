@@ -5,5 +5,10 @@ using System.Collections;
  */
 public class LaserFloorScript : Floor
 {
-	
+
+	//! We 'cast a lightning' downwards
+	public override void OnDestruction ()
+	{
+
+	}
 }

@@ -631,21 +631,21 @@ MonoBehaviour:
   - type: 0
     probability: 48
   - type: 1
-    probability: 0.5
+    probability: 1
   - type: 3
-    probability: 0.5
+    probability: 0
   - type: 2
-    probability: 0.5
+    probability: 1
   - type: 6
-    probability: 0.5
+    probability: 0
   intervals: 1.75
   positions:
-  - {x: 5.75, y: -4, z: -8.5}
-  - {x: 6.85, y: -4, z: -8.5}
-  - {x: 7.95, y: -4, z: -8.5}
-  - {x: 9.05, y: -4, z: -8.5}
-  - {x: 10.15, y: -4, z: -8.5}
-  - {x: 11.25, y: -4, z: -8.5}
+  - {x: 5.75, y: -7, z: -8.5}
+  - {x: 6.85, y: -7, z: -8.5}
+  - {x: 7.95, y: -7, z: -8.5}
+  - {x: 9.05, y: -7, z: -8.5}
+  - {x: 10.15, y: -7, z: -8.5}
+  - {x: 11.25, y: -7, z: -8.5}
 --- !u!23 &1686930810
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -686,7 +686,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686930808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: -4, z: -8.5}
+  m_LocalPosition: {x: 8.5, y: -7, z: -8.5}
   m_LocalScale: {x: 6.5, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}

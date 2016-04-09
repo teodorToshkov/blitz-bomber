@@ -13,21 +13,10 @@ public class FreezeFloorScript : Floor
 {
 	public float radius = 5; //!< the radius of floors which will be frozen in Unity units
 	public float time = 1f; //!< the time for which the floors will remain frozen
-	public string targetTag; //!< the objects with the "targetTag" will trigger the freeze
 
-	void OnTriggerEnter (Collider other)
+	//! We freeze
+	public override void OnDestruction ()
 	{
-		// If we have triggered with an object with "tag", we freeze our surroundings
-		/*if (other.CompareTag (targetTag))
-		{
-			foreach (MoveOnY floor in GameManager.floors)
-			{
-				if (Vector3.Distance (transform.position, floor.transform.position) < radius)
-				{
-					floor.isMoving = false;
-					Invoke ("floor.StartMoving", time);
-				}
-			}
-		}*/
+		
 	}
 }

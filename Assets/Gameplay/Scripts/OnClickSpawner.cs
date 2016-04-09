@@ -32,7 +32,8 @@ public class OnClickSpawner : MonoBehaviour
 				// We spawn the object and set the time that has to pass until we can next spawn to
 				// the timeout devided by the rate at which the gameplay is running
 				GameObject.Instantiate (target, transform.position + offset, Quaternion.identity);
-				timeoutTime = rechargerTime / GameManager.gamePlaySpeed;
+				timeoutTime = rechargerTime / (1 + (GameManager.gamePlaySpeed - 1) * 0.6f);
+				Debug.Log (timeoutTime + " " + GameManager.gamePlaySpeed);
 			}
 		}
 	}

@@ -10,7 +10,6 @@ using System;
  */
 public class LightningFloorScript : Floor
 {
-	public string targetTag; //!< the objects with the _tag_ will trigger the freeze
 	public GameObject destroyedFloor; //!< A __GameObject__ we will spawn on the places of the ones which are destroyed from the lightning
 
 	//! We 'cast a lightning' downwards
@@ -20,7 +19,7 @@ public class LightningFloorScript : Floor
 		int counter = 0;
 
 		Floor floor = null;
-		while ((floor == null || floor.transform.position.y > -3) && counter++ < 30)
+		while ((floor == null || floor.transform.position.y > -6) && counter++ < 30)
 		{
 			try
 			{
