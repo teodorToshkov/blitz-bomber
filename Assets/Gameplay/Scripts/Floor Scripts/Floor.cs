@@ -34,4 +34,9 @@ public class Floor : MonoBehaviour {
 	{
 		moveOnY = GetComponent<MoveOnY> ();
 	}
+
+	/// <summary>
+	/// Holds information about what happents when the __Floor__ is destroyed, can be called from other scripts
+	/// </summary>
+	public virtual void OnDestruction () {}
 }

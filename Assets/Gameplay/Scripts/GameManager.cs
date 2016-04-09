@@ -64,10 +64,24 @@ public class GameManager : MonoBehaviour
 		}
 	}
 
+	public static Floor GetFloor (int index)
+	{
+		return floors [index];
+	}
+
+	public static Floor GetRandomFloor ()
+	{
+		int rand = Random.Range (0, floors.Count - 1);
+		foreach (var floor in floors) {
+			if (floor.gameObject.activeSelf && --rand <= 0)
+				return floor;
+		}
+		return floors[0];
+	}
+
 	//! Adds a new floor to the list
 	public static void AddFloor (Floor.Type floorType, Vector3 position)
 	{
-		Debug.Log ("Adding a " + floorType + " floor at position " + position.x);
 		foreach (Floor floor in floors)
 		{
 			if (!floor.gameObject.activeSelf && floor.type == floorType)
@@ -79,7 +93,10 @@ public class GameManager : MonoBehaviour
 		}
 		Floor newFloor;
 		if (floorPrefabs.TryGetValue (floorType, out newFloor))
-			floors.Add (newFloor);
+		{
+			GameObject newGameObj = GameObject.Instantiate (newFloor.gameObject, position, Quaternion.identity) as GameObject;
+			floors.Add (newGameObj.GetComponent<Floor> ());
+		}
 		else Debug.LogError ("Floor.Type " + floorType + "was not found!");
 	}
 
@@ -92,6 +109,9 @@ public class GameManager : MonoBehaviour
 	//! Removes a floor from the list and destroys it
 	public static void RemoveFloor (Floor floor)
 	{
+		if (floor == null)
+			return;
+		floor.OnDestruction ();
 		floor.gameObject.SetActive (false);
 	}
 
@@ -121,7 +141,7 @@ public class GameManager : MonoBehaviour
 		isPlaying = false;
 	}
 
-	//! TO BE IMPLEMENTED
+	//! \todo TO BE IMPLEMENTED
 	public static void ShowResult ()
 	{
 

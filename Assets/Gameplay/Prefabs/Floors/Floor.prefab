@@ -88,6 +88,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 98680f55c6422ac419a9a33aba207a34, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  type: 0
   moveOnY: {fileID: 0}
 --- !u!114 &11468852
 MonoBehaviour:

@@ -65,15 +65,13 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:ad566787855351d28133507cc14af504b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ad566787855351d28133507cc14af504b">AddFloor</a> (GameObject floor)</td></tr>
-<tr class="memdesc:ad566787855351d28133507cc14af504b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new floor to the list.  <a href="#ad566787855351d28133507cc14af504b">More...</a><br /></td></tr>
-<tr class="separator:ad566787855351d28133507cc14af504b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a8a0f54643dcdede15446ab75f28494f7"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a8a0f54643dcdede15446ab75f28494f7">AddFloor</a> (<a class="el" href="class_move_on_y.html">MoveOnY</a> floor)</td></tr>
-<tr class="memdesc:a8a0f54643dcdede15446ab75f28494f7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new floor to the list.  <a href="#a8a0f54643dcdede15446ab75f28494f7">More...</a><br /></td></tr>
-<tr class="separator:a8a0f54643dcdede15446ab75f28494f7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a4504c62b7eb8dd3f0ff5a83d6f79b8f2"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a4504c62b7eb8dd3f0ff5a83d6f79b8f2">AddFloor</a> (<a class="el" href="class_floor.html">Floor</a> floor)</td></tr>
-<tr class="memdesc:a4504c62b7eb8dd3f0ff5a83d6f79b8f2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new floor to the list.  <a href="#a4504c62b7eb8dd3f0ff5a83d6f79b8f2">More...</a><br /></td></tr>
-<tr class="separator:a4504c62b7eb8dd3f0ff5a83d6f79b8f2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a33ae03e049de4bec935af7d6294961f3"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_floor.html">Floor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a33ae03e049de4bec935af7d6294961f3">GetFloor</a> (int index)</td></tr>
+<tr class="separator:a33ae03e049de4bec935af7d6294961f3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aba179685ceb50c8d5055f579f1a2bc00"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="class_floor.html">Floor</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aba179685ceb50c8d5055f579f1a2bc00">GetRandomFloor</a> ()</td></tr>
+<tr class="separator:aba179685ceb50c8d5055f579f1a2bc00"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a35234446a2d415bea3ba7981ec28e38b"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a35234446a2d415bea3ba7981ec28e38b">AddFloor</a> (<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7">Floor.Type</a> floorType, Vector3 position)</td></tr>
+<tr class="memdesc:a35234446a2d415bea3ba7981ec28e38b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Adds a new floor to the list.  <a href="#a35234446a2d415bea3ba7981ec28e38b">More...</a><br /></td></tr>
+<tr class="separator:a35234446a2d415bea3ba7981ec28e38b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0f21adac57fe2fa13e0a60400259f9e1"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a0f21adac57fe2fa13e0a60400259f9e1">RemoveFloor</a> (GameObject floor)</td></tr>
 <tr class="memdesc:a0f21adac57fe2fa13e0a60400259f9e1"><td class="mdescLeft">&#160;</td><td class="mdescRight">Removes a floor from the list and destroys it.  <a href="#a0f21adac57fe2fa13e0a60400259f9e1">More...</a><br /></td></tr>
 <tr class="separator:a0f21adac57fe2fa13e0a60400259f9e1"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -90,7 +88,6 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memdesc:a0d245e12cf744085851a5457ace61996"><td class="mdescLeft">&#160;</td><td class="mdescRight">We stop everything and say that the gameplay should stop.  <a href="#a0d245e12cf744085851a5457ace61996">More...</a><br /></td></tr>
 <tr class="separator:a0d245e12cf744085851a5457ace61996"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aebeee25723fe0756e93d73973720a182"><td class="memItemLeft" align="right" valign="top">static void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#aebeee25723fe0756e93d73973720a182">ShowResult</a> ()</td></tr>
-<tr class="memdesc:aebeee25723fe0756e93d73973720a182"><td class="mdescLeft">&#160;</td><td class="mdescRight">TO BE IMPLEMENTED.  <a href="#aebeee25723fe0756e93d73973720a182">More...</a><br /></td></tr>
 <tr class="separator:aebeee25723fe0756e93d73973720a182"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
@@ -99,6 +96,8 @@ Public Attributes</h2></td></tr>
 <tr class="separator:a3bf8f410a26d32c699e90ff797ed6819"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:adfc6a5c349fb9d3162694863ad98f6b7"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#adfc6a5c349fb9d3162694863ad98f6b7">maxGamePlaySpeed</a> = 2f</td></tr>
 <tr class="separator:adfc6a5c349fb9d3162694863ad98f6b7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a453a93e3997c00fe147d771709d2afab"><td class="memItemLeft" align="right" valign="top"><a class="el" href="class_floor.html">Floor</a>[]&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a453a93e3997c00fe147d771709d2afab">_floorPrefabs</a></td></tr>
+<tr class="separator:a453a93e3997c00fe147d771709d2afab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
 Static Public Attributes</h2></td></tr>
@@ -108,6 +107,8 @@ Static Public Attributes</h2></td></tr>
 <tr class="separator:a0e40c5fb8a37c60628678563bfea6975"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ad74e94caf03ac3f1fc7ff9ca76538fe3"><td class="memItemLeft" align="right" valign="top">static float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ad74e94caf03ac3f1fc7ff9ca76538fe3">gamePlaySpeed</a></td></tr>
 <tr class="separator:ad74e94caf03ac3f1fc7ff9ca76538fe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad00ad4a5a1cc7aeff38fdc1fc5b5d3e3"><td class="memItemLeft" align="right" valign="top">static Dictionary&lt; <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7">Floor.Type</a>, <a class="el" href="class_floor.html">Floor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#ad00ad4a5a1cc7aeff38fdc1fc5b5d3e3">floorPrefabs</a></td></tr>
+<tr class="separator:ad00ad4a5a1cc7aeff38fdc1fc5b5d3e3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a26bb7ac1254eed923762acf1810c06df"><td class="memItemLeft" align="right" valign="top">static List&lt; <a class="el" href="class_floor.html">Floor</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_game_manager.html#a26bb7ac1254eed923762acf1810c06df">floors</a></td></tr>
 <tr class="separator:a26bb7ac1254eed923762acf1810c06df"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -130,7 +131,7 @@ It holds information about the state of the game:</p><ul>
 <li>what the current speed at which the gameplay is going is.</li>
 </ul>
 <p>It stores a list of all floors, where we control how the floors are added/removed from the scene.</p>
-<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>Implemet the function ShowResult </dd></dl>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000002">Todo:</a></b></dt><dd>Implemet the function ShowResult </dd></dl>
 </div><h2 class="groupheader">Member Function Documentation</h2>
 <a class="anchor" id="a07aaf1227e4d645f15e0a964f54ef291"></a>
 <div class="memitem">
@@ -183,7 +184,7 @@ It holds information about the state of the game:</p><ul>
 
 </div>
 </div>
-<a class="anchor" id="ad566787855351d28133507cc14af504b"></a>
+<a class="anchor" id="a33ae03e049de4bec935af7d6294961f3"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,10 +192,10 @@ It holds information about the state of the game:</p><ul>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void AddFloor </td>
+          <td class="memname">static <a class="el" href="class_floor.html">Floor</a> GetFloor </td>
           <td>(</td>
-          <td class="paramtype">GameObject&#160;</td>
-          <td class="paramname"><em>floor</em></td><td>)</td>
+          <td class="paramtype">int&#160;</td>
+          <td class="paramname"><em>index</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -205,11 +206,9 @@ It holds information about the state of the game:</p><ul>
 </table>
 </div><div class="memdoc">
 
-<p>Adds a new floor to the list. </p>
-
 </div>
 </div>
-<a class="anchor" id="a8a0f54643dcdede15446ab75f28494f7"></a>
+<a class="anchor" id="aba179685ceb50c8d5055f579f1a2bc00"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -217,10 +216,9 @@ It holds information about the state of the game:</p><ul>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void AddFloor </td>
+          <td class="memname">static <a class="el" href="class_floor.html">Floor</a> GetRandomFloor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_move_on_y.html">MoveOnY</a>&#160;</td>
-          <td class="paramname"><em>floor</em></td><td>)</td>
+          <td class="paramname"></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -231,11 +229,9 @@ It holds information about the state of the game:</p><ul>
 </table>
 </div><div class="memdoc">
 
-<p>Adds a new floor to the list. </p>
-
 </div>
 </div>
-<a class="anchor" id="a4504c62b7eb8dd3f0ff5a83d6f79b8f2"></a>
+<a class="anchor" id="a35234446a2d415bea3ba7981ec28e38b"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -245,9 +241,19 @@ It holds information about the state of the game:</p><ul>
         <tr>
           <td class="memname">static void AddFloor </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="class_floor.html">Floor</a>&#160;</td>
-          <td class="paramname"><em>floor</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7">Floor.Type</a>&#160;</td>
+          <td class="paramname"><em>floorType</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">Vector3&#160;</td>
+          <td class="paramname"><em>position</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -408,8 +414,7 @@ It holds information about the state of the game:</p><ul>
   </tr>
 </table>
 </div><div class="memdoc">
-
-<p>TO BE IMPLEMENTED. </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000003">Todo:</a></b></dt><dd>TO BE IMPLEMENTED </dd></dl>
 
 </div>
 </div>
@@ -432,6 +437,18 @@ It holds information about the state of the game:</p><ul>
       <table class="memname">
         <tr>
           <td class="memname">float maxGamePlaySpeed = 2f</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a class="anchor" id="a453a93e3997c00fe147d771709d2afab"></a>
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="class_floor.html">Floor</a> [] _floorPrefabs</td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -498,6 +515,26 @@ It holds information about the state of the game:</p><ul>
 
 </div>
 </div>
+<a class="anchor" id="ad00ad4a5a1cc7aeff38fdc1fc5b5d3e3"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">Dictionary&lt;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7">Floor.Type</a>, <a class="el" href="class_floor.html">Floor</a>&gt; floorPrefabs</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a class="anchor" id="a26bb7ac1254eed923762acf1810c06df"></a>
 <div class="memitem">
 <div class="memproto">
@@ -526,7 +563,7 @@ It holds information about the state of the game:</p><ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 8 2016 13:40:05 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 9 2016 18:52:12 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

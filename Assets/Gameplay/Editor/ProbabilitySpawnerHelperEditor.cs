@@ -28,7 +28,7 @@ class ProbabilitySpawnerHelperEditor : PropertyDrawer {
 		Rect probabilityRect = new Rect (position.x + position.width * 0.7f, position.y, position.width * 0.3f, position.height);
 
 		// Draw fields - passs GUIContent.none to each so they are drawn without labels
-		EditorGUI.PropertyField (targetRect, property.FindPropertyRelative ("target"), GUIContent.none);
+		EditorGUI.PropertyField (targetRect, property.FindPropertyRelative ("type"), GUIContent.none);
 		EditorGUI.PropertyField (probabilityRect, property.FindPropertyRelative ("probability"), GUIContent.none);
 
 		// Set indent back to what it was

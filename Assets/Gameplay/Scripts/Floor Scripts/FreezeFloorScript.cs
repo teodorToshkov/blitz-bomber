@@ -13,7 +13,7 @@ public class FreezeFloorScript : Floor
 {
 	public float radius = 5; //!< the radius of floors which will be frozen in Unity units
 	public float time = 1f; //!< the time for which the floors will remain frozen
-	public string targetTag; //!< the objects with the "tag" will trigger the freeze
+	public string targetTag; //!< the objects with the "targetTag" will trigger the freeze
 
 	void OnTriggerEnter (Collider other)
 	{

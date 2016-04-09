@@ -1,48 +1,53 @@
 ﻿using UnityEngine;
 using System.Collections;
+using System;
 
 /*! \brief A script which casts a lightning, which goes through floors below the current one.
  * 
  * This script is responsible for determining the behaviour of the floors with a "lightning" buff.\n
  * 
  * Upon trigger it casts a lightning onto floors below it.
- * 
- * \todo Substitute the floor replacement system with a one where a _line_, connecting two consequetive destroyed floors is a block spreading from one to the other
  */
-
 public class LightningFloorScript : Floor
 {
 	public string targetTag; //!< the objects with the _tag_ will trigger the freeze
 	public GameObject destroyedFloor; //!< A __GameObject__ we will spawn on the places of the ones which are destroyed from the lightning
 
-	void OnTriggerEnter (Collider other)
+	//! We 'cast a lightning' downwards
+	public override void OnDestruction ()
 	{
-		// If we have triggered with an object with "tag", we 'cast' a lightning
-		if (other.CompareTag (targetTag))
+		// We store a counter in order to prevent an infinate loop in case the algorithm fails
+		int counter = 0;
+
+		Floor floor = null;
+		while ((floor == null || floor.transform.position.y > -3) && counter++ < 30)
 		{
-			Floor floor = null;
-			while (floor == null || floor.transform.position.y > -3)
+			try
 			{
-				Floor buffer = GameManager.floors [Random.Range (0, GameManager.floors.Count - 1)];
-				if (buffer != null && buffer.transform != null)
+				Floor buffer = GameManager.GetRandomFloor ();
+				if (buffer.CompareTag ("Destroyable") && buffer.gameObject.activeSelf)
 				{
 					if (floor == null && buffer.transform.position.y < transform.position.y)
 					{
 						buffer = GetFloorInWay (GetComponent<Floor> (), buffer);
+						InstantiateLinkBetweenFloors (buffer, this);
 						floor = buffer;
 					}
 					else if (buffer.transform.position.y < floor.transform.position.y)
 					{
 						buffer = GetFloorInWay (floor, buffer);
-						Instantiate (destroyedFloor, floor.transform.position, Quaternion.identity);
+						InstantiateLinkBetweenFloors (floor, buffer);
 						GameManager.RemoveFloor (floor);
 						floor = buffer;
 					}
 				}
 			}
-			Instantiate (destroyedFloor, transform.position, Quaternion.identity);
-			Destroy (gameObject);
+			catch (NullReferenceException ex)
+			{
+				continue;
+			}
 		}
+		GameManager.RemoveFloor (floor);
 	}
 
 	//! A function which returns a __Floor__ which is in the way from one __Floor__ to another
@@ -50,15 +55,33 @@ public class LightningFloorScript : Floor
 	 We cast a ray from the __start floor__ towards the __end floor__ and if we hit a __Floor__, we return it, if not, we return the __end floor__.
 	 @returns the Floor which passes through the _line_, connecting the __start floor__ and the __end floor__, if any or the __end floor__ itself
 	 */
-	public Floor GetFloorInWay (Floor start /*!< the __Floor__ from which we will start the ray */,
-								Floor end /*!< the __Floor__ at which we will end the ray */)
+	private Floor GetFloorInWay (Floor start /*!< the __Floor__ from which we will start the ray */,
+								 Floor end /*!< the __Floor__ at which we will end the ray */)
 	{
 		Vector3 startPos = start.transform.position;
 		Vector3 endPos = end.transform.position;
 		Physics.queriesHitTriggers = true;
 		RaycastHit hit;
+		Floor floorToReturn = null;
 		if (Physics.Raycast (startPos, endPos - startPos, out hit))
-			return hit.collider.gameObject.GetComponent<Floor> ();
-		return end;
+			floorToReturn = hit.collider.gameObject.GetComponent<Floor> ();
+		return floorToReturn.CompareTag ("Destroyable") ? floorToReturn : end;
+	}
+
+	//! A function which instantiates a new _destroyedFloor_ with rotation and scale so that if links the __start floor__ and the __end floor__
+	/*!
+	 */
+	private void InstantiateLinkBetweenFloors (Floor start /*!< the __Floor__ from which we will start the ray */,
+											   Floor end /*!< the __Floor__ at which we will end the ray */)
+	{
+		Vector3 startPos = start.transform.position;
+		Vector3 endPos = end.transform.position;
+
+		Vector3 newPos = Vector3.Lerp (startPos, endPos, 0.5f);
+		float newScale = Vector3.Distance (startPos, endPos);
+
+		GameObject newLink = Instantiate (destroyedFloor, newPos, Quaternion.identity) as GameObject;
+		newLink.transform.LookAt (end.transform);
+		newLink.transform.localScale = new Vector3 (0.15f, 0.15f, newScale);
 	}
 }

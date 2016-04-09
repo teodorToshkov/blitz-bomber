@@ -81,6 +81,9 @@
 <div class="textblock">Here is a list of all class members with links to the classes they belong to:</div>
 
 <h3><a class="anchor" id="index__"></a>- _ -</h3><ul>
+<li>_floorPrefabs
+: <a class="el" href="class_game_manager.html#a453a93e3997c00fe147d771709d2afab">GameManager</a>
+</li>
 <li>_number
 : <a class="el" href="class_three_d_number.html#a1d78021f14b560df98f5ca852b517b9d">ThreeDNumber</a>
 </li>
@@ -92,7 +95,7 @@
 : <a class="el" href="class_doxygen_window.html#ae2a91cdab670a1fa3792dde85580df1a">DoxygenWindow</a>
 </li>
 <li>AddFloor()
-: <a class="el" href="class_game_manager.html#ad566787855351d28133507cc14af504b">GameManager</a>
+: <a class="el" href="class_game_manager.html#a35234446a2d415bea3ba7981ec28e38b">GameManager</a>
 </li>
 <li>Args
 : <a class="el" href="class_doxy_runner.html#aaee5608c5b1fa010aaf9d599fb7eab20">DoxyRunner</a>
@@ -138,6 +141,9 @@
 <h3><a class="anchor" id="index_d"></a>- d -</h3><ul>
 <li>destroyedFloor
 : <a class="el" href="class_lightning_floor_script.html#af10a4e775d5449a4b6412b689f99b25b">LightningFloorScript</a>
+</li>
+<li>DestroySelf()
+: <a class="el" href="class_destroy_after.html#a58bf65b56031ae32be6e601967be1404">DestroyAfter</a>
 </li>
 <li>difference
 : <a class="el" href="class_switch_between_xs.html#a247ced382d32038404f915a7c8e39861">SwitchBetweenXs</a>
@@ -207,6 +213,9 @@
 <li>Finished
 : <a class="el" href="class_doxy_thread_safe_output.html#a1a21cf2fc1c257b2ee75ef2f60e2c227">DoxyThreadSafeOutput</a>
 </li>
+<li>floorPrefabs
+: <a class="el" href="class_game_manager.html#ad00ad4a5a1cc7aeff38fdc1fc5b5d3e3">GameManager</a>
+</li>
 <li>floors
 : <a class="el" href="class_game_manager.html#a26bb7ac1254eed923762acf1810c06df">GameManager</a>
 </li>
@@ -226,11 +235,17 @@
 <li>GenerateGUI()
 : <a class="el" href="class_doxygen_window.html#a7da0121a2105ad3a866ead59c6473074">DoxygenWindow</a>
 </li>
+<li>GetFloor()
+: <a class="el" href="class_game_manager.html#a33ae03e049de4bec935af7d6294961f3">GameManager</a>
+</li>
 <li>GetFloorInWay()
 : <a class="el" href="class_lightning_floor_script.html#a97072d0a1eeeaae251fab066a5e441c5">LightningFloorScript</a>
 </li>
 <li>GetNumber()
 : <a class="el" href="class_three_d_number.html#ac60e1fed0deca094d7ca94d96a89d0b0">ThreeDNumber</a>
+</li>
+<li>GetRandomFloor()
+: <a class="el" href="class_game_manager.html#aba179685ceb50c8d5055f579f1a2bc00">GameManager</a>
 </li>
 </ul>
 
@@ -244,6 +259,9 @@
 </li>
 <li>Instance
 : <a class="el" href="class_doxygen_window.html#aa166d518af2b5c13eeac8a08e7e55ed0">DoxygenWindow</a>
+</li>
+<li>InstantiateLinkBetweenFloors()
+: <a class="el" href="class_lightning_floor_script.html#ac3f290771d80d5c3c5738ff8c4b0750c">LightningFloorScript</a>
 </li>
 <li>intervals
 : <a class="el" href="class_spawner.html#a5be04c5214d75cd8119754cfe49153df">Spawner</a>
@@ -297,6 +315,10 @@
 <li>onCompleteCallBack
 : <a class="el" href="class_doxy_runner.html#a9f4fda07b04ab345d73bfe277112c831">DoxyRunner</a>
 </li>
+<li>OnDestruction()
+: <a class="el" href="class_floor.html#a839d37a4d7ba1d5ee17ac53c2919f262">Floor</a>
+, <a class="el" href="class_lightning_floor_script.html#a76e0820923fa03b71e9e1b74fb2ce557">LightningFloorScript</a>
+</li>
 <li>OnDisable()
 : <a class="el" href="class_doxygen_window.html#a3e9a1e1cd7a478a0d00f0efb51a8e4cf">DoxygenWindow</a>
 </li>
@@ -312,9 +334,9 @@
 </li>
 <li>OnTriggerEnter()
 : <a class="el" href="class_bullet_script.html#acff9d685fff96c7038a9bab324551813">BulletScript</a>
+, <a class="el" href="class_destroy_on_trigger_enter.html#acff9d685fff96c7038a9bab324551813">DestroyOnTriggerEnter</a>
 , <a class="el" href="class_finish_on_trigger_enter.html#acff9d685fff96c7038a9bab324551813">FinishOnTriggerEnter</a>
 , <a class="el" href="class_freeze_floor_script.html#acff9d685fff96c7038a9bab324551813">FreezeFloorScript</a>
-, <a class="el" href="class_lightning_floor_script.html#acff9d685fff96c7038a9bab324551813">LightningFloorScript</a>
 </li>
 <li>outputLock
 : <a class="el" href="class_doxy_thread_safe_output.html#a57c8432979b7b00bbabc5a28762ee7be">DoxyThreadSafeOutput</a>
@@ -418,7 +440,8 @@
 , <a class="el" href="class_switch_between_xs.html#a7f7e4724cf57d59513b39c5ecc81adc8">SwitchBetweenXs</a>
 </li>
 <li>Start()
-: <a class="el" href="class_game_manager.html#a07aaf1227e4d645f15e0a964f54ef291">GameManager</a>
+: <a class="el" href="class_destroy_after.html#a07aaf1227e4d645f15e0a964f54ef291">DestroyAfter</a>
+, <a class="el" href="class_game_manager.html#a07aaf1227e4d645f15e0a964f54ef291">GameManager</a>
 , <a class="el" href="class_move_on_y.html#a07aaf1227e4d645f15e0a964f54ef291">MoveOnY</a>
 , <a class="el" href="class_spawner.html#a07aaf1227e4d645f15e0a964f54ef291">Spawner</a>
 , <a class="el" href="class_switch_between_xs.html#a07aaf1227e4d645f15e0a964f54ef291">SwitchBetweenXs</a>
@@ -447,7 +470,6 @@
 <h3><a class="anchor" id="index_t"></a>- t -</h3><ul>
 <li>target
 : <a class="el" href="class_on_click_spawner.html#aebcdb6865e8e48a878d71eba77d1f5b3">OnClickSpawner</a>
-, <a class="el" href="class_probability_spawner_helper.html#aebcdb6865e8e48a878d71eba77d1f5b3">ProbabilitySpawnerHelper</a>
 </li>
 <li>targets
 : <a class="el" href="class_spawner.html#aa1448acf4ff0e0ee3f38a21298240f14">Spawner</a>
@@ -456,7 +478,8 @@
 : <a class="el" href="class_spawner.html#ae6be60627278a289350fe4c0b7963f79">Spawner</a>
 </li>
 <li>targetTag
-: <a class="el" href="class_finish_on_trigger_enter.html#a7b24ec0c501d20df3024a5465f679b33">FinishOnTriggerEnter</a>
+: <a class="el" href="class_destroy_on_trigger_enter.html#a7b24ec0c501d20df3024a5465f679b33">DestroyOnTriggerEnter</a>
+, <a class="el" href="class_finish_on_trigger_enter.html#a7b24ec0c501d20df3024a5465f679b33">FinishOnTriggerEnter</a>
 , <a class="el" href="class_freeze_floor_script.html#a7b24ec0c501d20df3024a5465f679b33">FreezeFloorScript</a>
 , <a class="el" href="class_lightning_floor_script.html#a7b24ec0c501d20df3024a5465f679b33">LightningFloorScript</a>
 </li>
@@ -464,7 +487,8 @@
 : <a class="el" href="class_doxygen_window.html#aaf3df3d7fc45a942dfe62b303242b4e0">DoxygenWindow</a>
 </li>
 <li>time
-: <a class="el" href="class_freeze_floor_script.html#a8b8dfe2335a5bf90695960dc6a1c5d3b">FreezeFloorScript</a>
+: <a class="el" href="class_destroy_after.html#a8b8dfe2335a5bf90695960dc6a1c5d3b">DestroyAfter</a>
+, <a class="el" href="class_freeze_floor_script.html#a8b8dfe2335a5bf90695960dc6a1c5d3b">FreezeFloorScript</a>
 </li>
 <li>timeoutTime
 : <a class="el" href="class_on_click_spawner.html#ac6df129dc19107346440650bf823466e">OnClickSpawner</a>
@@ -473,7 +497,8 @@
 : <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7">Floor</a>
 </li>
 <li>type
-: <a class="el" href="class_floor.html#afd484180a1e68dcfd67a83a0b4dab635">Floor</a>
+: <a class="el" href="class_floor.html#ab6f4e6d3fde00ce906e46494f60dfe7a">Floor</a>
+, <a class="el" href="class_probability_spawner_helper.html#a68062c4cc3947230ce9b52b5f60dd8eb">ProbabilitySpawnerHelper</a>
 </li>
 </ul>
 
@@ -483,7 +508,8 @@
 : <a class="el" href="class_doxygen_window.html#a2096e12858a68dbf734d729c0bc5f139">DoxygenWindow</a>
 </li>
 <li>Update()
-: <a class="el" href="class_game_manager.html#aec0783b5a136e042adcc47bae4fe5291">GameManager</a>
+: <a class="el" href="class_bomb_floor_script.html#aec0783b5a136e042adcc47bae4fe5291">BombFloorScript</a>
+, <a class="el" href="class_game_manager.html#aec0783b5a136e042adcc47bae4fe5291">GameManager</a>
 , <a class="el" href="class_move_on_y.html#aec0783b5a136e042adcc47bae4fe5291">MoveOnY</a>
 , <a class="el" href="class_on_click_spawner.html#aec0783b5a136e042adcc47bae4fe5291">OnClickSpawner</a>
 , <a class="el" href="class_switch_between_xs.html#aec0783b5a136e042adcc47bae4fe5291">SwitchBetweenXs</a>
@@ -532,7 +558,7 @@
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Fri Apr 8 2016 13:40:05 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 9 2016 18:52:12 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
