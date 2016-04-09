@@ -69,9 +69,6 @@ Public Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
-<tr class="memitem:a7b24ec0c501d20df3024a5465f679b33"><td class="memItemLeft" align="right" valign="top">string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lightning_floor_script.html#a7b24ec0c501d20df3024a5465f679b33">targetTag</a></td></tr>
-<tr class="memdesc:a7b24ec0c501d20df3024a5465f679b33"><td class="mdescLeft">&#160;</td><td class="mdescRight">the objects with the <em>tag</em> will trigger the freeze  <a href="#a7b24ec0c501d20df3024a5465f679b33">More...</a><br /></td></tr>
-<tr class="separator:a7b24ec0c501d20df3024a5465f679b33"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af10a4e775d5449a4b6412b689f99b25b"><td class="memItemLeft" align="right" valign="top">GameObject&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_lightning_floor_script.html#af10a4e775d5449a4b6412b689f99b25b">destroyedFloor</a></td></tr>
 <tr class="memdesc:af10a4e775d5449a4b6412b689f99b25b"><td class="mdescLeft">&#160;</td><td class="mdescRight">A <b>GameObject</b> we will spawn on the places of the ones which are destroyed from the lightning.  <a href="#af10a4e775d5449a4b6412b689f99b25b">More...</a><br /></td></tr>
 <tr class="separator:af10a4e775d5449a4b6412b689f99b25b"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -138,6 +135,9 @@ Additional Inherited Members</h2></td></tr>
 </div><div class="memdoc">
 
 <p>We 'cast a lightning' downwards. </p>
+<p>We loop pick a random <a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a> and if its position on the <b>y</b> axis is less than that of our last destroyed <a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a>, we check if there is a <a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a> between the the two. If there is, we destroy the <a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a> which is in the way, otherwise we destroy the one we picked randomly.<br />
+This continues until the 'bottom' <b>Floors</b> have been reached.</p>
+<p>Note: In order to prevent the posibility of an infinate loop, we set a limit of 30 iterations. </p>
 
 <p>Reimplemented from <a class="el" href="class_floor.html#a839d37a4d7ba1d5ee17ac53c2919f262">Floor</a>.</p>
 
@@ -231,20 +231,6 @@ Additional Inherited Members</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
-<a class="anchor" id="a7b24ec0c501d20df3024a5465f679b33"></a>
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">string targetTag</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-<p>the objects with the <em>tag</em> will trigger the freeze </p>
-
-</div>
-</div>
 <a class="anchor" id="af10a4e775d5449a4b6412b689f99b25b"></a>
 <div class="memitem">
 <div class="memproto">
@@ -265,7 +251,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Apr 9 2016 18:52:12 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 9 2016 21:59:22 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

@@ -430,7 +430,7 @@ PlayerSettings:
   - UNet_ServiceEnabled::UNet_ServiceEnabled
   Build_ServiceEnabled::Build_ServiceEnabled: True
   UNet_ServiceEnabled::UNet_ServiceEnabled: True
-  cloudProjectId: b1a2e2d3-23d8-4a8e-80d9-9b6bb49451df
-  projectName: Blitz
+  cloudProjectId: ad694395-dad5-4ac7-b2af-e63d0f62291e
+  projectName: Blitz Bomber
   organizationId: whgames
   cloudEnabled: 0
