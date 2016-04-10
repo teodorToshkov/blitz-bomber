@@ -13,7 +13,6 @@ public class FinishOnTriggerEnter : MonoBehaviour
 		// We compare the tag to see if we hit a floor
 		if (other.CompareTag (targetTag))
 		{
-			Debug.Log (other.name);
 			// If we have, we end the gameplay and show the result to the screen
 			GameManager.EndGamePlay ();
 			GameManager.ShowResult ();
