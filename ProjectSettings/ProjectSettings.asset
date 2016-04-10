@@ -90,14 +90,14 @@ PlayerSettings:
     16:9: 1
     Others: 1
   bundleIdentifier: com.whgames.Blitz
-  bundleVersion: 1.1
+  bundleVersion: 0.8
   preloadedAssets: []
   metroEnableIndependentInputSource: 0
   metroEnableLowLatencyPresentationAPI: 0
   xboxOneDisableKinectGpuReservation: 0
   virtualRealitySupported: 0
   productGUID: e3f1e08bb719bdb4e8b29b4c4484466e
-  AndroidBundleVersionCode: 2
+  AndroidBundleVersionCode: 3
   AndroidMinSdkVersion: 9
   AndroidPreferredInstallLocation: 0
   aotOptions: 
@@ -111,10 +111,10 @@ PlayerSettings:
   CreateWallpaper: 0
   APKExpansionFiles: 1
   preloadShaders: 0
-  StripUnusedMeshComponents: 0
+  StripUnusedMeshComponents: 1
   VertexChannelCompressionMask:
     serializedVersion: 2
-    m_Bits: 238
+    m_Bits: 4294967295
   iPhoneSdkVersion: 988
   iPhoneTargetOSVersion: 22
   uIPrerenderedIcon: 0
@@ -158,8 +158,8 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Teodor Toshkov/Documents/Games/Blitz bubble bomber/user.keystore
-  AndroidKeyaliasName: 
+  AndroidKeystoreName: C:/Users/Teodor Toshkov/Documents/Games/BlitzBomber/user.keystore
+  AndroidKeyaliasName: blitz cube bomber
   AndroidTVCompatibility: 0
   AndroidIsGame: 1
   androidEnableBanner: 0
