@@ -7,10 +7,10 @@ Material:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_Name: Color4_transparent
-  m_Shader: {fileID: 10512, guid: 0000000000000000f000000000000000, type: 0}
-  m_ShaderKeywords: _ALPHAPREMULTIPLY_ON
-  m_LightmapFlags: 5
-  m_CustomRenderQueue: 2450
+  m_Shader: {fileID: 46, guid: 0000000000000000f000000000000000, type: 0}
+  m_ShaderKeywords: _ALPHABLEND_ON _EMISSION
+  m_LightmapFlags: 1
+  m_CustomRenderQueue: 3000
   stringTagMap:
     RenderType: Transparent
   m_SavedProperties:
@@ -95,6 +95,13 @@ Material:
           m_Offset: {x: 0, y: 0}
       data:
         first:
+          name: _MKGlowTex
+        second:
+          m_Texture: {fileID: 10916, guid: 0000000000000000f000000000000000, type: 0}
+          m_Scale: {x: 0, y: 0}
+          m_Offset: {x: 0, y: 0}
+      data:
+        first:
           name: _ToonShade
         second:
           m_Texture: {fileID: 0}
@@ -104,7 +111,7 @@ Material:
       data:
         first:
           name: _SrcBlend
-        second: 1
+        second: 5
       data:
         first:
           name: _DstBlend
@@ -116,7 +123,7 @@ Material:
       data:
         first:
           name: _Shininess
-        second: 1
+        second: 0.078125
       data:
         first:
           name: _Parallax
@@ -148,7 +155,7 @@ Material:
       data:
         first:
           name: _Mode
-        second: 3
+        second: 2
       data:
         first:
           name: _Metallic
@@ -156,53 +163,41 @@ Material:
       data:
         first:
           name: _Emission
-        second: 100
+        second: 1
       data:
         first:
-          name: _Stencil
+          name: _MKGlowPower
+        second: 0.2
+      data:
+        first:
+          name: _MKGlowTexStrength
         second: 0
       data:
         first:
-          name: _StencilComp
-        second: 8
-      data:
-        first:
-          name: _StencilOp
+          name: _MKGlowOffSet
         second: 0
       data:
         first:
-          name: _StencilReadMask
-        second: 255
-      data:
-        first:
-          name: _StencilWriteMask
-        second: 255
-      data:
-        first:
-          name: _ColorMask
-        second: 15
-      data:
-        first:
-          name: _UseUIAlphaClip
+          name: _EmissionLM
         second: 0
     m_Colors:
       data:
         first:
           name: _EmissionColor
-        second: {r: 0, g: 0, b: 0, a: 1}
+        second: {r: 0.1, g: 0.009411766, b: 0, a: 1}
       data:
         first:
           name: _Color
-        second: {r: 1, g: 0.3882353, b: 0.24313726, a: 1}
+        second: {r: 1, g: 0.09356727, b: 0, a: 1}
       data:
         first:
           name: _SpecColor
-        second: {r: 0, g: 0, b: 0, a: 0}
+        second: {r: 0.2, g: 0.2, b: 0.2, a: 1}
       data:
         first:
-          name: _Emission
-        second: {r: 0, g: 0, b: 0, a: 0}
+          name: _MKGlowColor
+        second: {r: 0.90588236, g: 0.51831305, b: 0.47830588, a: 1}
       data:
         first:
-          name: _Specular
-        second: {r: 0, g: 0, b: 0, a: 0}
+          name: _MKGlowTexColor
+        second: {r: 0.90588236, g: 0.29803923, b: 0.23529412, a: 1}

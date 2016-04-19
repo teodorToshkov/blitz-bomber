@@ -1,4 +1,5 @@
 var class_finish_on_trigger_enter =
 [
-    [ "targetTag", "class_finish_on_trigger_enter.html#af56cb5d17f524c9c6149cbe920a0bea4", null ]
+    [ "OnTriggerEnter", "class_finish_on_trigger_enter.html#acff9d685fff96c7038a9bab324551813", null ],
+    [ "targetTag", "class_finish_on_trigger_enter.html#a7b24ec0c501d20df3024a5465f679b33", null ]
 ];

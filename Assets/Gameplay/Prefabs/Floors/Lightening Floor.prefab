@@ -132,6 +132,7 @@ MonoBehaviour:
   type: 2
   moveOnY: {fileID: 0}
   destroyedFloor: {fileID: 107144, guid: 78242f62f10999e4ba3b38d932440407, type: 2}
+  trail: {fileID: 11431034, guid: 6c48735baf6053341aae1176679e720d, type: 2}
 --- !u!212 &21241912
 SpriteRenderer:
   m_ObjectHideFlags: 1

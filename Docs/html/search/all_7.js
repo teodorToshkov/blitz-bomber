@@ -1,11 +1,13 @@
 var searchData=
 [
-  ['increasewith',['IncreaseWith',['../class_three_d_number.html#a90b50f54e0ee6b161dab78974adf78c8',1,'ThreeDNumber']]],
-  ['init',['Init',['../class_doxygen_window.html#a48f456c44b07cc9283a0583579b1d65a',1,'DoxygenWindow']]],
-  ['instance',['Instance',['../class_doxygen_window.html#a45d09c9a64d2873367470303789e3bf9',1,'DoxygenWindow']]],
-  ['intervals',['intervals',['../class_spawner.html#a664b2dade6df426d1894e52f5a3b2e51',1,'Spawner']]],
-  ['isfinished',['isFinished',['../class_game_manager.html#af063c9792a5fe81671b3ba406703a263',1,'GameManager.isFinished()'],['../class_doxy_thread_safe_output.html#a676622488e7bec792b66693fc1f20e73',1,'DoxyThreadSafeOutput.isFinished()']]],
-  ['ismoving',['isMoving',['../class_move_on_y.html#abac95224fd6ee6e97b4eb9acf5abb10e',1,'MoveOnY']]],
-  ['isplaying',['isPlaying',['../class_game_manager.html#a6ceb06d992dbdbe5ecbab54603c8651a',1,'GameManager']]],
-  ['isstarted',['isStarted',['../class_doxy_thread_safe_output.html#afc9e32fd7203a5c6c74ee914241c3e79',1,'DoxyThreadSafeOutput']]]
+  ['gamemanager',['GameManager',['../class_game_manager.html',1,'']]],
+  ['gamemanager_2ecs',['GameManager.cs',['../_game_manager_8cs.html',1,'']]],
+  ['gameplayquickenrate',['gamePlayQuickenRate',['../class_game_manager.html#a3bf8f410a26d32c699e90ff797ed6819',1,'GameManager']]],
+  ['gameplayspeed',['gamePlaySpeed',['../class_game_manager.html#ad74e94caf03ac3f1fc7ff9ca76538fe3',1,'GameManager']]],
+  ['generate',['Generate',['../class_doxygen_window.html#a8cfd888f09da703d4a3014b10865f4fca32b919d18cfaca89383f6000dcc9c031',1,'DoxygenWindow']]],
+  ['generategui',['GenerateGUI',['../class_doxygen_window.html#a7da0121a2105ad3a866ead59c6473074',1,'DoxygenWindow']]],
+  ['getfloor',['GetFloor',['../class_game_manager.html#a33ae03e049de4bec935af7d6294961f3',1,'GameManager']]],
+  ['getfloorinway',['GetFloorInWay',['../class_lightning_floor_script.html#a97072d0a1eeeaae251fab066a5e441c5',1,'LightningFloorScript']]],
+  ['getnumber',['GetNumber',['../class_three_d_number.html#ac60e1fed0deca094d7ca94d96a89d0b0',1,'ThreeDNumber']]],
+  ['getrandomfloor',['GetRandomFloor',['../class_game_manager.html#aba179685ceb50c8d5055f579f1a2bc00',1,'GameManager']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['spawner',['Spawner',['../class_spawner.html',1,'']]],
-  ['switchbetweenxs',['SwitchBetweenXs',['../class_switch_between_xs.html',1,'']]]
+  ['probabilityspawnerhelper',['ProbabilitySpawnerHelper',['../class_probability_spawner_helper.html',1,'']]],
+  ['probabilityspawnerhelpereditor',['ProbabilitySpawnerHelperEditor',['../class_probability_spawner_helper_editor.html',1,'']]]
 ];

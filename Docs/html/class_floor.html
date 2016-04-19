@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Blitz bomber
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">A flat FlappyBird-style remake of the retro game Blitz bomber</div>
   </td>
@@ -32,7 +32,6 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -63,7 +62,7 @@
 
 <p>Inherits MonoBehaviour.</p>
 
-<p>Inherited by <a class="el" href="class_bomb_floor_script.html">BombFloorScript</a>, <a class="el" href="class_freeze_floor_script.html">FreezeFloorScript</a>, <a class="el" href="class_laser_floor_script.html">LaserFloorScript</a>, and <a class="el" href="class_lightning_floor_script.html">LightningFloorScript</a>.</p>
+<p>Inherited by <a class="el" href="class_bomb_floor_script.html">BombFloorScript</a>, <a class="el" href="class_freeze_floor_script.html">FreezeFloorScript</a>, <a class="el" href="class_laser_floor_script.html">LaserFloorScript</a>, <a class="el" href="class_lightning_floor_script.html">LightningFloorScript</a>, and <a class="el" href="class_time_slower_floor_script.html">TimeSlowerFloorScript</a>.</p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
@@ -74,20 +73,21 @@ Public Types</h2></td></tr>
 <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a65467087a19145f43129bba42781aea0">Freeze</a>, 
 <br />
 &#160;&#160;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a689428a27d96105cd51f9d3ffd2fef09">TimeSlower</a>, 
+<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7af1a49eecd5156ba66f727e57c2ce6395">Durable</a>, 
 <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a0267be9abd76eda2beb7e1ebd7382de8">SuperBulletsGun</a>, 
 <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7ad47bda86cb76322c22950e84e9cd109d">Laser</a>, 
-<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a619485b2fdfeb058ad742ba44ec15886">MultipleBulletsGun</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7ab571058aa58f5735f4e6e1a8f49fdf62">RapidFireGun</a>
+&#160;&#160;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a619485b2fdfeb058ad742ba44ec15886">MultipleBulletsGun</a>, 
+<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7ab571058aa58f5735f4e6e1a8f49fdf62">RapidFireGun</a>
 <br />
  }</td></tr>
 <tr class="separator:a1d1cfd8ffb84e947f82999c682b666a7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a839d37a4d7ba1d5ee17ac53c2919f262"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a839d37a4d7ba1d5ee17ac53c2919f262">OnDestruction</a> ()</td></tr>
-<tr class="memdesc:a839d37a4d7ba1d5ee17ac53c2919f262"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds information about what happents when the <b><a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a></b> is destroyed, can be called from other scripts  <a href="#a839d37a4d7ba1d5ee17ac53c2919f262">More...</a><br /></td></tr>
-<tr class="separator:a839d37a4d7ba1d5ee17ac53c2919f262"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a941c8e8d2c5aa963d76aef113f19d835"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_floor.html#a941c8e8d2c5aa963d76aef113f19d835">Destroy</a> ()</td></tr>
+<tr class="memdesc:a941c8e8d2c5aa963d76aef113f19d835"><td class="mdescLeft">&#160;</td><td class="mdescRight">Holds information about what happents when the <b><a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a></b> is destroyed, can be called from other scripts  <a href="#a941c8e8d2c5aa963d76aef113f19d835">More...</a><br /></td></tr>
+<tr class="separator:a941c8e8d2c5aa963d76aef113f19d835"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -140,6 +140,10 @@ Private Member Functions</h2></td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a1d1cfd8ffb84e947f82999c682b666a7a689428a27d96105cd51f9d3ffd2fef09"></a>TimeSlower&#160;</td><td class="fielddoc">
 <p>Time.timeScale = &lt;value&gt;. </p>
 </td></tr>
+<tr><td class="fieldname"><a class="anchor" id="a1d1cfd8ffb84e947f82999c682b666a7af1a49eecd5156ba66f727e57c2ce6395"></a>Durable&#160;</td><td class="fielddoc">
+<p>A more durable <a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a> (does more damage to the GameObjects with a Destroyer tag) </p>
+<dl class="todo"><dt><b><a class="el" href="todo.html#_todo000001">Todo:</a></b></dt><dd>Implement this! </dd></dl>
+</td></tr>
 <tr><td class="fieldname"><a class="anchor" id="a1d1cfd8ffb84e947f82999c682b666a7a0267be9abd76eda2beb7e1ebd7382de8"></a>SuperBulletsGun&#160;</td><td class="fielddoc">
 <p>Indestructible bullets. </p>
 </td></tr>
@@ -183,7 +187,7 @@ Private Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a class="anchor" id="a839d37a4d7ba1d5ee17ac53c2919f262"></a>
+<a class="anchor" id="a941c8e8d2c5aa963d76aef113f19d835"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -191,7 +195,7 @@ Private Member Functions</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">virtual void OnDestruction </td>
+          <td class="memname">virtual void Destroy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -206,7 +210,7 @@ Private Member Functions</h2></td></tr>
 
 <p>Holds information about what happents when the <b><a class="el" href="class_floor.html" title="This script describes a GameObject as a Floor and contains information about its type, whether a Floor.Type.Regular or a special one and also stores references. ">Floor</a></b> is destroyed, can be called from other scripts </p>
 
-<p>Reimplemented in <a class="el" href="class_lightning_floor_script.html#a76e0820923fa03b71e9e1b74fb2ce557">LightningFloorScript</a>, <a class="el" href="class_freeze_floor_script.html#a76e0820923fa03b71e9e1b74fb2ce557">FreezeFloorScript</a>, <a class="el" href="class_bomb_floor_script.html#a76e0820923fa03b71e9e1b74fb2ce557">BombFloorScript</a>, and <a class="el" href="class_laser_floor_script.html#a76e0820923fa03b71e9e1b74fb2ce557">LaserFloorScript</a>.</p>
+<p>Reimplemented in <a class="el" href="class_time_slower_floor_script.html#a8daa6e624095ed02da02b2ca3f376ac6">TimeSlowerFloorScript</a>, <a class="el" href="class_lightning_floor_script.html#a8daa6e624095ed02da02b2ca3f376ac6">LightningFloorScript</a>, <a class="el" href="class_freeze_floor_script.html#a8daa6e624095ed02da02b2ca3f376ac6">FreezeFloorScript</a>, <a class="el" href="class_bomb_floor_script.html#a8daa6e624095ed02da02b2ca3f376ac6">BombFloorScript</a>, and <a class="el" href="class_laser_floor_script.html#a8daa6e624095ed02da02b2ca3f376ac6">LaserFloorScript</a>.</p>
 
 </div>
 </div>
@@ -245,7 +249,7 @@ Private Member Functions</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 10 2016 20:27:16 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 19 2016 16:39:44 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

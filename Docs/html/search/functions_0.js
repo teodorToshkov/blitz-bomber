@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['addfloor',['AddFloor',['../class_game_manager.html#a7c7ad96c669cabedcc35ecbd7c4be35c',1,'GameManager.AddFloor(GameObject floor)'],['../class_game_manager.html#a1f5c9fc4280c2f977766ef22d1e25a88',1,'GameManager.AddFloor(MoveOnY floor)'],['../class_game_manager.html#a4c44583090d9933380a4a0f092f20aba',1,'GameManager.AddFloor(Floor floor)']]]
+  ['aboutgui',['AboutGUI',['../class_doxygen_window.html#ae2a91cdab670a1fa3792dde85580df1a',1,'DoxygenWindow']]],
+  ['addfloor',['AddFloor',['../class_game_manager.html#a35234446a2d415bea3ba7981ec28e38b',1,'GameManager']]],
+  ['awake',['Awake',['../class_floor.html#ae4b513cddd594f1c359e4f0a3e79a8c6',1,'Floor']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['probabilityspawnerhelpereditor_2ecs',['ProbabilitySpawnerHelperEditor.cs',['../_probability_spawner_helper_editor_8cs.html',1,'']]]
+  ['onclickspawner_2ecs',['OnClickSpawner.cs',['../_on_click_spawner_8cs.html',1,'']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['generate',['Generate',['../class_doxygen_window.html#ad1f6043062e30f52cb634b72294a5676a32b919d18cfaca89383f6000dcc9c031',1,'DoxygenWindow']]]
+  ['freeze',['Freeze',['../class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a65467087a19145f43129bba42781aea0',1,'Floor']]]
 ];

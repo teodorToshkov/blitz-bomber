@@ -16,8 +16,6 @@ public class BulletScript : MonoBehaviour
 		{
 			// We destroy the floor
 			StartCoroutine (RemoveFloor (other.gameObject));
-			// We increase the score of the player
-			ThreeDNumber.IncreaseWith (1);
 
 			// We decrease the number of floors the bullet can destroy before it itself is being detroyed
 			if (--endurance == 0)

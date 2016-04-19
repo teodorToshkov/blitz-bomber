@@ -121,8 +121,7 @@ public class GameManager : MonoBehaviour
 	{
 		if (floor == null)
 			return;
-		floor.OnDestruction ();
-		floor.gameObject.SetActive (false);
+		floor.Destroy ();
 	}
 
 	//! Stops everything withing the gameplay
@@ -140,6 +139,7 @@ public class GameManager : MonoBehaviour
 		{
 			// We reset the score and reload the level
 			ThreeDNumber.ResetNumber ();
+			Time.timeScale = 1;
 			SceneManager.LoadScene (0);
 		}
 	}

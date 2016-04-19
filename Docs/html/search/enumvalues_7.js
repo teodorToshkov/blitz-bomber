@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['rapidfiregun',['RapidFireGun',['../class_floor.html#a18fb4817774f25decc9c1986a879a022ab571058aa58f5735f4e6e1a8f49fdf62',1,'Floor']]],
-  ['regular',['Regular',['../class_floor.html#a18fb4817774f25decc9c1986a879a022ad2203cb1237cb6460cbad94564e39345',1,'Floor']]]
+  ['multiplebulletsgun',['MultipleBulletsGun',['../class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a619485b2fdfeb058ad742ba44ec15886',1,'Floor']]]
 ];

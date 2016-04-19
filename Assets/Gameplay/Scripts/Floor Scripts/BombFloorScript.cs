@@ -9,9 +9,11 @@ public class BombFloorScript : Floor
 	public ExpandToSize destructionBlast; //!< the visual effect for the destruction radius
 
 	//! We cast a __DestructionBlast__
-	public override void OnDestruction ()
+	public override void Destroy ()
 	{
 		ExpandToSize newBlast = (Instantiate (destructionBlast.gameObject, transform.position, Quaternion.identity) as GameObject).GetComponent<ExpandToSize> ();
 		newBlast.targetSize = radius;
+
+		base.Destroy ();
 	}
 }

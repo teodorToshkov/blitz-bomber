@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['probabilityspawnerhelper',['ProbabilitySpawnerHelper',['../class_probability_spawner_helper.html',1,'']]],
-  ['probabilityspawnerhelpereditor',['ProbabilitySpawnerHelperEditor',['../class_probability_spawner_helper_editor.html',1,'']]]
+  ['onclickspawner',['OnClickSpawner',['../class_on_click_spawner.html',1,'']]]
 ];

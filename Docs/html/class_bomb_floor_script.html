@@ -18,7 +18,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">Blitz bomber
-   &#160;<span id="projectnumber">0.2</span>
+   &#160;<span id="projectnumber">0.3</span>
    </div>
    <div id="projectbrief">A flat FlappyBird-style remake of the retro game Blitz bomber</div>
   </td>
@@ -32,7 +32,6 @@
     <ul class="tablist">
       <li><a href="index.html"><span>Main&#160;Page</span></a></li>
       <li><a href="pages.html"><span>Related&#160;Pages</span></a></li>
-      <li><a href="namespaces.html"><span>Packages</span></a></li>
       <li class="current"><a href="annotated.html"><span>Classes</span></a></li>
       <li><a href="files.html"><span>Files</span></a></li>
     </ul>
@@ -63,9 +62,9 @@
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a76e0820923fa03b71e9e1b74fb2ce557"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bomb_floor_script.html#a76e0820923fa03b71e9e1b74fb2ce557">OnDestruction</a> ()</td></tr>
-<tr class="memdesc:a76e0820923fa03b71e9e1b74fb2ce557"><td class="mdescLeft">&#160;</td><td class="mdescRight">We cast a <b>DestructionBlast</b>  <a href="#a76e0820923fa03b71e9e1b74fb2ce557">More...</a><br /></td></tr>
-<tr class="separator:a76e0820923fa03b71e9e1b74fb2ce557"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8daa6e624095ed02da02b2ca3f376ac6"><td class="memItemLeft" align="right" valign="top">override void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_bomb_floor_script.html#a8daa6e624095ed02da02b2ca3f376ac6">Destroy</a> ()</td></tr>
+<tr class="memdesc:a8daa6e624095ed02da02b2ca3f376ac6"><td class="mdescLeft">&#160;</td><td class="mdescRight">We cast a <b>DestructionBlast</b>  <a href="#a8daa6e624095ed02da02b2ca3f376ac6">More...</a><br /></td></tr>
+<tr class="separator:a8daa6e624095ed02da02b2ca3f376ac6"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
 Public Attributes</h2></td></tr>
@@ -93,11 +92,12 @@ Additional Inherited Members</h2></td></tr>
 <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a65467087a19145f43129bba42781aea0">Freeze</a>, 
 <br />
 &#160;&#160;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a689428a27d96105cd51f9d3ffd2fef09">TimeSlower</a>, 
+<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7af1a49eecd5156ba66f727e57c2ce6395">Durable</a>, 
 <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a0267be9abd76eda2beb7e1ebd7382de8">SuperBulletsGun</a>, 
 <a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7ad47bda86cb76322c22950e84e9cd109d">Laser</a>, 
-<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a619485b2fdfeb058ad742ba44ec15886">MultipleBulletsGun</a>, 
 <br />
-&#160;&#160;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7ab571058aa58f5735f4e6e1a8f49fdf62">RapidFireGun</a>
+&#160;&#160;<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7a619485b2fdfeb058ad742ba44ec15886">MultipleBulletsGun</a>, 
+<a class="el" href="class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7ab571058aa58f5735f4e6e1a8f49fdf62">RapidFireGun</a>
 <br />
  }</td></tr>
 <tr class="separator:a1d1cfd8ffb84e947f82999c682b666a7 inherit pub_types_class_floor"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -105,7 +105,7 @@ Additional Inherited Members</h2></td></tr>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>Casts a <b>destructionBlast</b> with a <em>targetsize</em> equal to <b>radius</b> </p>
 </div><h2 class="groupheader">Member Function Documentation</h2>
-<a class="anchor" id="a76e0820923fa03b71e9e1b74fb2ce557"></a>
+<a class="anchor" id="a8daa6e624095ed02da02b2ca3f376ac6"></a>
 <div class="memitem">
 <div class="memproto">
 <table class="mlabels">
@@ -113,7 +113,7 @@ Additional Inherited Members</h2></td></tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">override void OnDestruction </td>
+          <td class="memname">override void Destroy </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -128,7 +128,7 @@ Additional Inherited Members</h2></td></tr>
 
 <p>We cast a <b>DestructionBlast</b> </p>
 
-<p>Reimplemented from <a class="el" href="class_floor.html#a839d37a4d7ba1d5ee17ac53c2919f262">Floor</a>.</p>
+<p>Reimplemented from <a class="el" href="class_floor.html#a941c8e8d2c5aa963d76aef113f19d835">Floor</a>.</p>
 
 </div>
 </div>
@@ -167,7 +167,7 @@ Additional Inherited Members</h2></td></tr>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sun Apr 10 2016 20:27:16 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Apr 19 2016 16:39:44 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>

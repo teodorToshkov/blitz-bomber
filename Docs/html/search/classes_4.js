@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['lightningfloorscript',['LightningFloorScript',['../class_lightning_floor_script.html',1,'']]]
+  ['gamemanager',['GameManager',['../class_game_manager.html',1,'']]]
 ];

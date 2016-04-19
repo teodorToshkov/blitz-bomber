@@ -1,6 +1,8 @@
 var class_on_click_spawner =
 [
-    [ "offset", "class_on_click_spawner.html#a56fc7c1a9284ec056d37420e0be59e5b", null ],
-    [ "rechargerTime", "class_on_click_spawner.html#a0aec88fcb70f0cdea7d9bc0b4d437af3", null ],
-    [ "target", "class_on_click_spawner.html#a4b5e91e727cad37ccd02899cee43fe6c", null ]
+    [ "Update", "class_on_click_spawner.html#aec0783b5a136e042adcc47bae4fe5291", null ],
+    [ "target", "class_on_click_spawner.html#aebcdb6865e8e48a878d71eba77d1f5b3", null ],
+    [ "offset", "class_on_click_spawner.html#a7f408ba1aa97876b758ef307de0a1daa", null ],
+    [ "rechargerTime", "class_on_click_spawner.html#a59a1d56951c9d9a697174b8c19b46b01", null ],
+    [ "timeoutTime", "class_on_click_spawner.html#ac6df129dc19107346440650bf823466e", null ]
 ];

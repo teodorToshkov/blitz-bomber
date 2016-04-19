@@ -15,6 +15,7 @@ public class Floor : MonoBehaviour {
 								*/
 		Freeze,				//!< Freezes floors within a certain range / Freezes everything but the _dropper_
 		TimeSlower,			//!< Time.timeScale = &lt;value&gt;
+		Durable,			//!< A more durable Floor (does more damage to the GameObjects with a Destroyer tag) \todo Implement this!
 		SuperBulletsGun,	//!< Indestructible bullets
 		Laser,				//!< Destroys everything on its way
 		MultipleBulletsGun,	//!< Shoots 3-5-7 bullets at a time in different directions
@@ -38,5 +39,10 @@ public class Floor : MonoBehaviour {
 	/// <summary>
 	/// Holds information about what happents when the __Floor__ is destroyed, can be called from other scripts
 	/// </summary>
-	public virtual void OnDestruction () {}
+	public virtual void Destroy ()
+	{
+		// We increase the score of the player
+		ThreeDNumber.IncreaseWith (1);
+		gameObject.SetActive (false);
+	}
 }

@@ -1,5 +1,5 @@
 var class_probability_spawner_helper =
 [
-    [ "probability", "class_probability_spawner_helper.html#a2a905310b605c5bfc3217cac5975e696", null ],
-    [ "target", "class_probability_spawner_helper.html#ada662b717b1bf6a98001025e1a4873e8", null ]
+    [ "type", "class_probability_spawner_helper.html#a68062c4cc3947230ce9b52b5f60dd8eb", null ],
+    [ "probability", "class_probability_spawner_helper.html#a8163f5c3e017c1dee818b2f28d938942", null ]
 ];

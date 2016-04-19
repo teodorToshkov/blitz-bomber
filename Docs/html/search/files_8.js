@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['spawner_2ecs',['Spawner.cs',['../_spawner_8cs.html',1,'']]],
-  ['switchbetweenxs_2ecs',['SwitchBetweenXs.cs',['../_switch_between_xs_8cs.html',1,'']]]
+  ['probabilityspawnerhelpereditor_2ecs',['ProbabilitySpawnerHelperEditor.cs',['../_probability_spawner_helper_editor_8cs.html',1,'']]]
 ];

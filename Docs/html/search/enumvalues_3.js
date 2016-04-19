@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['freeze',['Freeze',['../class_floor.html#a18fb4817774f25decc9c1986a879a022a65467087a19145f43129bba42781aea0',1,'Floor']]]
+  ['durable',['Durable',['../class_floor.html#a1d1cfd8ffb84e947f82999c682b666a7af1a49eecd5156ba66f727e57c2ce6395',1,'Floor']]]
 ];

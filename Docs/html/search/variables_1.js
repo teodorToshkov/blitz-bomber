@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['basefilestring',['BaseFileString',['../class_doxygen_window.html#a7a4acfac0a07a2a05f183e4f0bc53b62',1,'DoxygenWindow']]]
+  ['args',['Args',['../class_doxy_runner.html#aaee5608c5b1fa010aaf9d599fb7eab20',1,'DoxyRunner']]],
+  ['assestsfolder',['AssestsFolder',['../class_doxygen_window.html#aa2b9a0afc6d5f18699854234b4c94a2d',1,'DoxygenWindow']]]
 ];

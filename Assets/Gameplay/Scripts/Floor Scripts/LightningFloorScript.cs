@@ -1,6 +1,7 @@
 ﻿using UnityEngine;
 using System.Collections;
 using System;
+using System.Collections.Generic;
 
 /*! \brief A script which casts a lightning, which goes through floors below the current one.
  * 
@@ -20,7 +21,7 @@ public class LightningFloorScript : Floor
 
 	 Note: In order to prevent the posibility of an infinate loop, we set a limit of 30 iterations.
 	*/
-	public override void OnDestruction ()
+	public override void Destroy ()
 	{
 		// We store a counter in order to prevent an infinate loop in case the algorithm fails
 		int counter = 0;
@@ -48,12 +49,14 @@ public class LightningFloorScript : Floor
 					}
 				}
 			}
-			catch (NullReferenceException ex)
+			catch (NullReferenceException)
 			{
 				continue;
 			}
 		}
 		GameManager.RemoveFloor (floor);
+
+		base.Destroy ();
 	}
 
 	//! A function which returns a __Floor__ which is in the way from one __Floor__ to another

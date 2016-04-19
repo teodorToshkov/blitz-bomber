@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['threednumber',['ThreeDNumber',['../class_three_d_number.html',1,'']]]
+  ['spawner',['Spawner',['../class_spawner.html',1,'']]],
+  ['switchbetweenxs',['SwitchBetweenXs',['../class_switch_between_xs.html',1,'']]]
 ];

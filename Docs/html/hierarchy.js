@@ -8,10 +8,18 @@ var hierarchy =
     ] ],
     [ "MonoBehaviour", null, [
       [ "BulletScript", "class_bullet_script.html", null ],
+      [ "DestroyAfter", "class_destroy_after.html", null ],
+      [ "DestroyFloorOnTriggerEnter", "class_destroy_floor_on_trigger_enter.html", null ],
+      [ "DestroyOnTriggerEnter", "class_destroy_on_trigger_enter.html", null ],
+      [ "ExpandToSize", "class_expand_to_size.html", null ],
+      [ "FadeMaterial", "class_fade_material.html", null ],
       [ "FinishOnTriggerEnter", "class_finish_on_trigger_enter.html", null ],
       [ "Floor", "class_floor.html", [
+        [ "BombFloorScript", "class_bomb_floor_script.html", null ],
         [ "FreezeFloorScript", "class_freeze_floor_script.html", null ],
-        [ "LightningFloorScript", "class_lightning_floor_script.html", null ]
+        [ "LaserFloorScript", "class_laser_floor_script.html", null ],
+        [ "LightningFloorScript", "class_lightning_floor_script.html", null ],
+        [ "TimeSlowerFloorScript", "class_time_slower_floor_script.html", null ]
       ] ],
       [ "GameManager", "class_game_manager.html", null ],
       [ "MoveOnY", "class_move_on_y.html", null ],

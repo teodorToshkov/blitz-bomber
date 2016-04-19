@@ -15,8 +15,8 @@ public class FreezeFloorScript : Floor
 	public float time = 1f; //!< the time for which the floors will remain frozen
 
 	//! We freeze
-	public override void OnDestruction ()
+	public override void Destroy ()
 	{
-		
+		base.Destroy ();
 	}
 }

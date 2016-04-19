@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['doxyrunner',['DoxyRunner',['../class_doxy_runner.html#aed7742f6732027e7427393d727898eba',1,'DoxyRunner']]]
+  ['configgui',['ConfigGUI',['../class_doxygen_window.html#a4d659bc3673e5ae901f1888c8aab5f57',1,'DoxygenWindow']]]
 ];

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['onclickspawner',['OnClickSpawner',['../class_on_click_spawner.html',1,'']]]
+  ['moveony',['MoveOnY',['../class_move_on_y.html',1,'']]]
 ];
