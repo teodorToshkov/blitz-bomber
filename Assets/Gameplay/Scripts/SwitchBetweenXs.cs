@@ -12,13 +12,6 @@ public class SwitchBetweenXs : MonoBehaviour
 
 	private float difference; //!< the difference between the two X's
 	private bool switchDirection = false; //!< marks at which position we are going
-
-	//! Use this for initialization
-	void Start ()
-	{
-		// We set the difference between the maximum and minimum values oh X
-		difference = x2 - x1;
-	}
 	
 	//! Update is called once per frame
 	void Update ()
@@ -26,6 +19,9 @@ public class SwitchBetweenXs : MonoBehaviour
 		// We don't move if the gameplay is stopped
 		if (!GameManager.isPlaying)
 			return;
+
+		// We set the difference between the maximum and minimum values oh X
+		difference = x2 - x1;
 
 		// We multiply the speed at which the object is moving by the rate at which the gameplay is moving
 		float newSpeed = speed * GameManager.gamePlaySpeed;
@@ -45,5 +41,23 @@ public class SwitchBetweenXs : MonoBehaviour
 			newPosition.x += difference * Time.deltaTime * newSpeed;
 		// We update the object's position
 		transform.position = newPosition;
+	}
+
+	/// <summary>
+	/// Increases the x1.
+	/// </summary>
+	/// <param name="amount">Amount.</param>
+	public void IncreaseX1 (float amount)
+	{
+		x1 += amount;
+	}
+
+	/// <summary>
+	/// Increases the x2.
+	/// </summary>
+	/// <param name="amount">Amount.</param>
+	public void IncreaseX2 (float amount)
+	{
+		x2 += amount;
 	}
 }
