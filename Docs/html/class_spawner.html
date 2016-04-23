@@ -85,6 +85,12 @@ Private Member Functions</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pri-attribs"></a>
 Private Attributes</h2></td></tr>
+<tr class="memitem:a97fd2f92d4842dfa0523d6616d5af35e"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spawner.html#a97fd2f92d4842dfa0523d6616d5af35e">numberOfStartPoisitions</a></td></tr>
+<tr class="memdesc:a97fd2f92d4842dfa0523d6616d5af35e"><td class="mdescLeft">&#160;</td><td class="mdescRight">the number of positions we will start spawning at which will increase with time  <a href="#a97fd2f92d4842dfa0523d6616d5af35e">More...</a><br /></td></tr>
+<tr class="separator:a97fd2f92d4842dfa0523d6616d5af35e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a401d607df06dff3b84016d208219d6f4"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spawner.html#a401d607df06dff3b84016d208219d6f4">increasePositionsInterval</a></td></tr>
+<tr class="memdesc:a401d607df06dff3b84016d208219d6f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">the intervals of time at which we are going to increase the number of positions to spawn at  <a href="#a401d607df06dff3b84016d208219d6f4">More...</a><br /></td></tr>
+<tr class="separator:a401d607df06dff3b84016d208219d6f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae6be60627278a289350fe4c0b7963f79"><td class="memItemLeft" align="right" valign="top">float&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="class_spawner.html#ae6be60627278a289350fe4c0b7963f79">targetsSumedProbability</a> = 0</td></tr>
 <tr class="memdesc:ae6be60627278a289350fe4c0b7963f79"><td class="mdescLeft">&#160;</td><td class="mdescRight">the sumed probability of all probabilities the objects have (it is not necessarily 1)  <a href="#ae6be60627278a289350fe4c0b7963f79">More...</a><br /></td></tr>
 <tr class="separator:ae6be60627278a289350fe4c0b7963f79"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -96,8 +102,12 @@ Private Attributes</h2></td></tr>
 When its time to spawn at a given position we pick randomly an object to spawn<br />
 <br />
 The objects have predefined probablilites to spawn as defined by the class <a class="el" href="class_probability_spawner_helper.html" title="A helper class to hold objets to spawn along with defined probability they have to spawn...">ProbabilitySpawnerHelper</a><br />
-<br />
-The way the predefineed probabilities work is:</p><ul>
+ </p><h3>Incrementing positions to spawn at.</h3>
+<p>The number of positions we are going to spawn at will start at <b>numberOfStartPoisitions</b> and increase with time.<br />
+If we are looking at a position which excedes the starting positions, we have to increase the startDelay with the appropriate time: </p><pre class="fragment">if (index &gt;= numberOfStartPoisitions)
+    startDelay += (1 + index - numberOfStartPoisitions) * increasePositionsInterval;
+</pre> <h2>The way the predefined probabilities work is:</h2>
+<ul>
 <li>we store the sum of the probabilities of each element;</li>
 <li>we generate a random number between zero and the sum;</li>
 <li>we set the object to instantiate to the last element; &gt; the reason is that if we keep on subtracting probabilities<br />
@@ -233,6 +243,28 @@ The way the predefineed probabilities work is:</p><ul>
 
 </div>
 </div>
+<a class="anchor" id="a97fd2f92d4842dfa0523d6616d5af35e"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">int numberOfStartPoisitions</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the number of positions we will start spawning at which will increase with time </p>
+
+</div>
+</div>
 <a class="anchor" id="a6df40cc5f6967cf2ea5858d82a804620"></a>
 <div class="memitem">
 <div class="memproto">
@@ -244,6 +276,28 @@ The way the predefineed probabilities work is:</p><ul>
 </div><div class="memdoc">
 
 <p>positions at which to spawn </p>
+
+</div>
+</div>
+<a class="anchor" id="a401d607df06dff3b84016d208219d6f4"></a>
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">float increasePositionsInterval</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">private</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>the intervals of time at which we are going to increase the number of positions to spawn at </p>
 
 </div>
 </div>
@@ -275,7 +329,7 @@ The way the predefineed probabilities work is:</p><ul>
 </div><!-- contents -->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Thu Apr 21 2016 12:55:35 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Sat Apr 23 2016 14:37:20 for Blitz bomber by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.11
 </small></address>
