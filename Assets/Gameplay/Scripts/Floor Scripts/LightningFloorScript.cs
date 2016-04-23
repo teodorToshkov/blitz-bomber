@@ -11,7 +11,7 @@ using System.Collections.Generic;
  */
 public class LightningFloorScript : Floor
 {
-	public GameObject destroyedFloor; //!< A __GameObject__ we will spawn on the places of the ones which are destroyed from the lightning
+	public GameObject lightning; //!< A __GameObject__ we will spawn on the places of the ones which are destroyed from the lightning
 
 	//! We 'cast a lightning' downwards
 	/*!
@@ -89,7 +89,7 @@ public class LightningFloorScript : Floor
 		Vector3 newPos = Vector3.Lerp (startPos, endPos, 0.5f);
 		float newScale = Vector3.Distance (startPos, endPos);
 
-		GameObject newLink = Instantiate (destroyedFloor, newPos, Quaternion.identity) as GameObject;
+		GameObject newLink = Instantiate (lightning, newPos, Quaternion.identity) as GameObject;
 		newLink.transform.LookAt (end.transform);
 		newLink.transform.localScale = new Vector3 (0.15f, 0.15f, newScale);
 	}
