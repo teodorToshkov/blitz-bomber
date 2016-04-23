@@ -17,3 +17,6 @@ Temp
 
 # Ignore Builds
 *.apk
+
+# Ignore Docs
+Docs
