@@ -5,9 +5,10 @@ using System.Collections;
 /*! \brief This script describes a __GameObject__ as a __Floor__ and contains information about its type,
  * 		  whether a Floor.Type.Regular or a special one and also stores references.
  */
-public class Floor : MonoBehaviour {
-
-	public enum Type {
+public class Floor : MonoBehaviour
+{
+	public enum Type
+	{
 		Regular,			//!< Has nothing to brag about
 		Bomb,				//!< Destroys everything within a radius
 		Lightning,			/*!< Make a small cube going through every _destroyed_ floor along with some other cubes,

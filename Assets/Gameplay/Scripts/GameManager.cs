@@ -90,22 +90,24 @@ public class GameManager : MonoBehaviour
 	/// </summary>
 	/// <param name="floorType">Floor type.</param>
 	/// <param name="position">Position at which to spawn the floor</param>
-	public static void AddFloor (Floor.Type floorType, Vector3 position)
+	public static void AddFloor (Floor.Type floorType, Vector3 position, Transform parentObject)
 	{
 		foreach (Floor floor in floors)
 		{
 			if (!floor.gameObject.activeSelf && floor.type == floorType)
 			{
 				floor.gameObject.SetActive (true);
-				floor.transform.position = position;
+				floor.transform.localPosition = position;
 				return;
 			}
 		}
 		Floor newFloor;
 		if (floorPrefabs.TryGetValue (floorType, out newFloor))
 		{
-			GameObject newGameObj = GameObject.Instantiate (newFloor.gameObject, position, Quaternion.identity) as GameObject;
+			GameObject newGameObj = GameObject.Instantiate (newFloor.gameObject) as GameObject;
 			floors.Add (newGameObj.GetComponent<Floor> ());
+			newGameObj.transform.SetParent (parentObject);
+			newGameObj.transform.localPosition = position;
 		}
 		else Debug.LogError ("Floor.Type " + floorType + "was not found!");
 	}

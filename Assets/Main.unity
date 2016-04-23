@@ -172,7 +172,7 @@ Transform:
   m_LocalScale: {x: 6.5, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 8
+  m_RootOrder: 7
 --- !u!1 &642441870
 GameObject:
   m_ObjectHideFlags: 0
@@ -221,7 +221,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 7
+  m_RootOrder: 6
 --- !u!1 &936758105
 GameObject:
   m_ObjectHideFlags: 0
@@ -332,7 +332,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.15294118, g: 0.68235296, b: 0.3764706, a: 1}
+  m_BackGroundColor: {r: 0.227451, g: 0.18039216, b: 0.27058825, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -382,6 +382,8 @@ GameObject:
   - 23: {fileID: 1249367874}
   - 114: {fileID: 1249367878}
   - 54: {fileID: 1249367879}
+  - 114: {fileID: 1249367880}
+  - 114: {fileID: 1249367881}
   m_Layer: 0
   m_Name: Dropper Slider
   m_TagString: Untagged
@@ -442,7 +444,7 @@ Transform:
   m_GameObject: {fileID: 1249367873}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.5, y: 10, z: -8.5}
-  m_LocalScale: {x: 6.5, y: 0.2, z: 1}
+  m_LocalScale: {x: 2.1, y: 0.2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 2
@@ -473,6 +475,32 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 126
   m_CollisionDetection: 0
+--- !u!114 &1249367880
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249367873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f69be122f90eed429f1d7879905701a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  duration: 1
+--- !u!114 &1249367881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1249367873}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec6ec4ffa0bd6c409ec394327419d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  duration: 1
 --- !u!1 &1606478456
 GameObject:
   m_ObjectHideFlags: 0
@@ -490,7 +518,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!23 &1606478457
 MeshRenderer:
   m_ObjectHideFlags: 0
@@ -575,7 +603,7 @@ Transform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 5
 --- !u!114 &1621294389
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -611,8 +639,10 @@ GameObject:
   - 33: {fileID: 1686930811}
   - 23: {fileID: 1686930810}
   - 114: {fileID: 1686930809}
+  - 114: {fileID: 1686930813}
+  - 114: {fileID: 1686930814}
   m_Layer: 0
-  m_Name: Spawner
+  m_Name: ProbabilitySpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -642,14 +672,15 @@ MonoBehaviour:
     probability: 1
   intervals: 1.75
   numberOfStartPoisitions: 2
+  parentObject: {fileID: 2022033360}
   positions:
-  - {x: 5.75, y: -7, z: -8.5}
-  - {x: 6.85, y: -7, z: -8.5}
-  - {x: 7.95, y: -7, z: -8.5}
-  - {x: 9.05, y: -7, z: -8.5}
-  - {x: 10.15, y: -7, z: -8.5}
-  - {x: 11.25, y: -7, z: -8.5}
-  increasePositionsInterval: 43.75
+  - {x: -0.55, y: 0, z: 0}
+  - {x: 0.55, y: 0, z: 0}
+  - {x: 1.65, y: 0, z: 0}
+  - {x: 2.75, y: 0, z: 0}
+  - {x: 3.85, y: 0, z: 0}
+  - {x: 4.95, y: 0, z: 0}
+  increasePositionsInterval: 35
   onIncreasePositions:
     m_PersistentCalls:
       m_Calls:
@@ -660,7 +691,62 @@ MonoBehaviour:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
-          m_FloatArgument: 1
+          m_FloatArgument: 0.55
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1686930813}
+        m_MethodName: IncreaseXScaleWith
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1249367880}
+        m_MethodName: IncreaseXScaleWith
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 1.1
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1686930814}
+        m_MethodName: IncreaseXPositionWith
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0.55
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2022033361}
+        m_MethodName: IncreaseXPositionWith
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -0.55
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1720354842}
+        m_MethodName: IncreaseX1
+        m_Mode: 4
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: -0.55
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -706,11 +792,37 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1686930808}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.5, y: -7, z: -8.5}
-  m_LocalScale: {x: 6.5, y: 0.2, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 2.1, y: 0.2, z: 1}
   m_Children: []
-  m_Father: {fileID: 0}
-  m_RootOrder: 5
+  m_Father: {fileID: 2022033360}
+  m_RootOrder: 0
+--- !u!114 &1686930813
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1686930808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1f69be122f90eed429f1d7879905701a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  duration: 1
+--- !u!114 &1686930814
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1686930808}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec6ec4ffa0bd6c409ec394327419d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  duration: 1
 --- !u!1 &1720354837
 GameObject:
   m_ObjectHideFlags: 0
@@ -786,8 +898,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0b01a256f533ee74a8d310315249c17d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  x1: 5.75
-  x2: 7.35
+  x1: 7.95
+  x2: 9.05
   speed: 3
 --- !u!114 &1720354843
 MonoBehaviour:
@@ -803,3 +915,45 @@ MonoBehaviour:
   target: {fileID: 119740, guid: 201f9eaf3be6e464cae92404bcaf0bbb, type: 2}
   offset: {x: 0, y: -0.5, z: 0}
   rechargerTime: 1
+--- !u!1 &2022033359
+GameObject:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 4
+  m_Component:
+  - 4: {fileID: 2022033360}
+  - 114: {fileID: 2022033361}
+  m_Layer: 0
+  m_Name: Floors
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &2022033360
+Transform:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022033359}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 8.5, y: -7, z: -8.5}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 1686930812}
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
+--- !u!114 &2022033361
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 2022033359}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7ec6ec4ffa0bd6c409ec394327419d83, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  type: 3
+  duration: 1

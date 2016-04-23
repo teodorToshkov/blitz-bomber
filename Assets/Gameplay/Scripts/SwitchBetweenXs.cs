@@ -52,6 +52,7 @@ public class SwitchBetweenXs : MonoBehaviour
 	/// Increases the x2.
 	/// </summary>
 	/// <param name="amount">Amount.</param>
+	/// \todo Make it animated with Interpolate.EaseInOut
 	public void IncreaseX2 (float amount)
 	{
 		x2 += amount;
