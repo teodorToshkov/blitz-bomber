@@ -10,7 +10,6 @@ public class SwitchBetweenXs : MonoBehaviour
 	[Range(0, 5)]
 	public float speed = 0.5f; //!< the speed at which the object will move
 
-	private float difference; //!< the difference between the two X's
 	private bool switchDirection = false; //!< marks at which position we are going
 	
 	//! Update is called once per frame
@@ -19,9 +18,6 @@ public class SwitchBetweenXs : MonoBehaviour
 		// We don't move if the gameplay is stopped
 		if (!GameManager.isPlaying)
 			return;
-
-		// We set the difference between the maximum and minimum values oh X
-		difference = x2 - x1;
 
 		// We multiply the speed at which the object is moving by the rate at which the gameplay is moving
 		float newSpeed = speed * GameManager.gamePlaySpeed;
@@ -35,10 +31,10 @@ public class SwitchBetweenXs : MonoBehaviour
 			switchDirection = true;
 		// If we are going in the left direction we move the object to the left
 		if (switchDirection)
-			newPosition.x -= difference * Time.deltaTime * newSpeed;
+			newPosition.x -= Time.deltaTime * newSpeed;
 		// If we are going in the right direction we move the object to the right
 		else
-			newPosition.x += difference * Time.deltaTime * newSpeed;
+			newPosition.x += Time.deltaTime * newSpeed;
 		// We update the object's position
 		transform.position = newPosition;
 	}
