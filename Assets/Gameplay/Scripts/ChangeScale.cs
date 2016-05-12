@@ -5,15 +5,7 @@ using System.Collections;
  */
 public class ChangeScale : MonoBehaviour
 {
-	public enum AnimationType
-	{
-		linear,		//!< The animation has the same speed from start to end
-		easeIn,		//!< The animation has a slow start
-		easeOut,	//!< The animation has a slow end
-		easeInOut,	//!< The animation has a slow start and end
-	}
-
-	public AnimationType type;	//!< The type of animation we will use
+	public Interpolate.AnimationType type;	//!< The type of animation we will use
 	public float duration;		//!< The duration of the animation
 
 	private float startTime;		//!< The time at which the animation starts
@@ -140,22 +132,22 @@ public class ChangeScale : MonoBehaviour
 		{
 			switch (this.type)
 			{
-				case AnimationType.linear:
+				case Interpolate.AnimationType.linear:
 					currentScale.x = Interpolate.Linear (startScale.x, targetScale.x, Time.time - startTime, duration);
 					currentScale.y = Interpolate.Linear (startScale.y, targetScale.y, Time.time - startTime, duration);
 					currentScale.z = Interpolate.Linear (startScale.z, targetScale.z, Time.time - startTime, duration);
 					break;
-				case AnimationType.easeIn:
+				case Interpolate.AnimationType.easeIn:
 					currentScale.x = Interpolate.EaseInQuad (startScale.x, targetScale.x, Time.time - startTime, duration);
 					currentScale.y = Interpolate.EaseInQuad (startScale.y, targetScale.y, Time.time - startTime, duration);
 					currentScale.z = Interpolate.EaseInQuad (startScale.z, targetScale.z, Time.time - startTime, duration);
 					break;
-				case AnimationType.easeOut:
+				case Interpolate.AnimationType.easeOut:
 					currentScale.x = Interpolate.EaseOutQuad (startScale.x, targetScale.x, Time.time - startTime, duration);
 					currentScale.y = Interpolate.EaseOutQuad (startScale.y, targetScale.y, Time.time - startTime, duration);
 					currentScale.z = Interpolate.EaseOutQuad (startScale.z, targetScale.z, Time.time - startTime, duration);
 					break;
-				case AnimationType.easeInOut:
+				case Interpolate.AnimationType.easeInOut:
 					currentScale.x = Interpolate.EaseInOutQuad (startScale.x, targetScale.x, Time.time - startTime, duration);
 					currentScale.y = Interpolate.EaseInOutQuad (startScale.y, targetScale.y, Time.time - startTime, duration);
 					currentScale.z = Interpolate.EaseInOutQuad (startScale.z, targetScale.z, Time.time - startTime, duration);

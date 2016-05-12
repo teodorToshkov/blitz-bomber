@@ -23,7 +23,7 @@ using System.Collections;
  */
 public class ThreeDNumber : MonoBehaviour
 {
-	public Vector3 position; //!< the position at which the last digit stands
+	public Transform parent; //!< the position of the parent is the at which the last digit stands
 	public Vector3 offest; //!< the offset which the digits should have between each other
 	public GameObject[] digits; //!< the models of the digits
 
@@ -68,9 +68,10 @@ public class ThreeDNumber : MonoBehaviour
 		index = 0;
 		while (buffer > 0 || index == 0)
 		{
-			Vector3 newPosition = position + offest * index;
-			GameObject newDigit = GameObject.Instantiate (digits [buffer % 10], newPosition, Quaternion.identity) as GameObject;
-			newDigit.transform.SetParent (transform);
+			Vector3 newPosition = offest * index;
+			GameObject newDigit = GameObject.Instantiate (digits [buffer % 10]) as GameObject;
+			newDigit.transform.SetParent (parent);
+			newDigit.transform.localPosition = newPosition;
 			buffer /= 10;
 			index++;
 		}
