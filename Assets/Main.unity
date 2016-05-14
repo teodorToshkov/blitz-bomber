@@ -200,8 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7fed81e9b6f1042940454aedd39c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePlayQuickenRate: 0.01
-  maxGamePlaySpeed: 2
+  gamePlayQuickenRate: -0.01
+  gamePlayStartSpeed: 2
+  gamePlaySpeedLimit: 1.5
   _floorPrefabs:
   - {fileID: 11457670, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
   - {fileID: 11471300, guid: f3031946d41cba444945bef31effb7f4, type: 2}
@@ -1005,7 +1006,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x1: 7.4
   x2: 9.6
-  speed: 2.5
+  speed: 1.5
 --- !u!114 &1720354843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1020,6 +1021,7 @@ MonoBehaviour:
   target: {fileID: 119740, guid: 201f9eaf3be6e464cae92404bcaf0bbb, type: 2}
   offset: {x: 0, y: -0.5, z: 0}
   rechargerTime: 1
+  gamePlaySpeedEffectorFactor: 1
 --- !u!114 &1720354844
 MonoBehaviour:
   m_ObjectHideFlags: 0

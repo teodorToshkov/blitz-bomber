@@ -11,7 +11,12 @@ public class OnClickSpawner : MonoBehaviour
 	public Vector3 offset; //!< the offset of the spawner's position the spawnee's initial position will be
 	public float rechargerTime; //!< the time that has to pass before we can spawn again
 
+	public float gamePlaySpeedEffectorFactor = 1f; //!< the factor by which the recharderTime is affected by GameManager.gamePlaySpeed
+
 	private float timeoutTime = 0; //!< holds information about when it is time to spawn
+
+	[SerializeField]
+	private bool debugMode = false;
 
 	void Update ()
 	{
@@ -21,10 +26,10 @@ public class OnClickSpawner : MonoBehaviour
 			timeoutTime -= Time.deltaTime;
 		}
 		// If the screen is touched/clicked and we are allowed to, we spawn
-		if (Input.GetMouseButtonDown (0))
+		if (Input.GetMouseButtonDown (0) || debugMode)
 		{
 			// If the gameplay is not playing, we resume it without spawning anything
-			if (!GameManager.isPlaying)
+			if (!GameManager.isPlaying && !debugMode)
 				GameManager.ResumeGamePlay ();
 			// If the gameplay is going, we spawn our object and set a timeout for when we can next spawn
 			else if (timeoutTime <= float.Epsilon)
@@ -32,7 +37,7 @@ public class OnClickSpawner : MonoBehaviour
 				// We spawn the object and set the time that has to pass until we can next spawn to
 				// the timeout devided by the rate at which the gameplay is running
 				GameObject.Instantiate (target, transform.position + offset, Quaternion.identity);
-				timeoutTime = rechargerTime / (1 + (GameManager.gamePlaySpeed - 1) * 0.75f);
+				timeoutTime = rechargerTime / (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
 			}
 		}
 	}

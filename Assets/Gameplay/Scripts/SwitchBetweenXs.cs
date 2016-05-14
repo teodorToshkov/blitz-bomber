@@ -9,6 +9,7 @@ public class SwitchBetweenXs : MonoBehaviour
 	public float x2; //!< the maximal X value
 	[Range(0, 5)]
 	public float speed = 0.5f; //!< the speed at which the object will move
+	public float gamePlaySpeedEffectorFactor = 1f; //!< the factor by which the speed is affected by GameManager.gamePlaySpeed
 
 	private bool switchDirection = false; //!< marks at which position we are going
 	
@@ -20,7 +21,7 @@ public class SwitchBetweenXs : MonoBehaviour
 			return;
 
 		// We multiply the speed at which the object is moving by the rate at which the gameplay is moving
-		float newSpeed = speed * GameManager.gamePlaySpeed;
+		float newSpeed = speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
 		// We store the current position in a buffer
 		Vector3 newPosition = transform.position;
 		// If the position is less than the minimum allowed we switch the direction at which we are moving the object
