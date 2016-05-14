@@ -200,8 +200,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7fed81e9b6f1042940454aedd39c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePlayQuickenRate: 0.01
-  maxGamePlaySpeed: 2
+  gamePlayQuickenRate: -0.01
+  gamePlayStartSpeed: 2.5
+  gamePlaySpeedLimit: 1
   _floorPrefabs:
   - {fileID: 11457670, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
   - {fileID: 11471300, guid: f3031946d41cba444945bef31effb7f4, type: 2}
@@ -427,7 +428,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1244255602}
   m_LocalRotation: {x: 0.3535534, y: -0.3535534, z: 0.14644663, w: 0.85355335}
-  m_LocalPosition: {x: 63.7, y: 82.7, z: -63.7}
+  m_LocalPosition: {x: 63.7, y: 83, z: -63.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -748,7 +749,7 @@ MonoBehaviour:
     probability: 1
   - type: 6
     probability: 1
-  intervals: 1.75
+  intervals: 1.7
   numberOfStartPoisitions: 3
   parentObject: {fileID: 2022033360}
   positions:
@@ -1006,6 +1007,7 @@ MonoBehaviour:
   x1: 7.4
   x2: 9.6
   speed: 2.5
+  gamePlaySpeedEffectorFactor: -0.1
 --- !u!114 &1720354843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1019,7 +1021,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 119740, guid: 201f9eaf3be6e464cae92404bcaf0bbb, type: 2}
   offset: {x: 0, y: -0.5, z: 0}
-  rechargerTime: 1
+  rechargerTime: 0.85
+  gamePlaySpeedEffectorFactor: 0
+  debugMode: 0
 --- !u!114 &1720354844
 MonoBehaviour:
   m_ObjectHideFlags: 0

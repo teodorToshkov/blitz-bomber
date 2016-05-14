@@ -17,7 +17,8 @@ using System.Collections.Generic;
 public class GameManager : MonoBehaviour
 {
 	public float gamePlayQuickenRate = 0.01f;	//!< the rate at which the gameplay quickens
-	public float maxGamePlaySpeed = 2f;			//!< the maximum speedm the gameplay can reach
+	public float gamePlayStartSpeed = 1f;		//!< the speed the gameplay starts at
+	public float gamePlaySpeedLimit = 2f;		//!< the limit speed the gameplay can reach
 	public Floor[] _floorPrefabs;				//!< __Prefabs__ of all floors we could instantiate
 
 	public static bool isPlaying;				//!< stores information whether the player playing or not
@@ -38,7 +39,7 @@ public class GameManager : MonoBehaviour
 	{
 		isPlaying = true;
 		isFinished = false;
-		gamePlaySpeed = 1.0f;
+		gamePlaySpeed = gamePlayStartSpeed;
 		floors = new List<Floor> (100);
 		floorPrefabs = new Dictionary<Floor.Type, Floor> (10);
 		foreach (Floor floor in _floorPrefabs)
@@ -56,8 +57,10 @@ public class GameManager : MonoBehaviour
 		// We chech if the game is on pause or not
 		if (isPlaying)
 		{
-			// We increase the rate at which the gameplay is going if it does not excede the maximum we have set
-			gamePlaySpeed = Mathf.Min (maxGamePlaySpeed, gamePlaySpeed + Time.deltaTime * gamePlayQuickenRate);
+			// We increase the rate at which the gameplay is going if it does not go beyond the limit we have set
+			gamePlaySpeed = gamePlaySpeedLimit > gamePlayStartSpeed ?
+				Mathf.Min (gamePlaySpeedLimit, gamePlaySpeed + Time.deltaTime * gamePlayQuickenRate):
+				Mathf.Max (gamePlaySpeedLimit, gamePlaySpeed + Time.deltaTime * gamePlayQuickenRate);
 		}
 	}
 

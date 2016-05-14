@@ -8,6 +8,7 @@ public class MoveOnY : MonoBehaviour
 {
 	[Range(-5, 5)]
 	public float speed = 0.5f; //!< The rate at which the object is going to travel
+	public float gamePlaySpeedEffectorFactor = 1f; //!< the factor by which the speed is affected by GameManager.gamePlaySpeed
 
 	[System.NonSerialized]
 	public bool isMoving;
@@ -37,7 +38,7 @@ public class MoveOnY : MonoBehaviour
 			return;
 
 		// We multiply the speed at which to travel by the rate at which the gameplay should go
-		float newSpeed = speed * GameManager.gamePlaySpeed;
+		float newSpeed = speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
 
 		// We use a buffer to set the position to
 		Vector3 newPosition = transform.position;
