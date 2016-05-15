@@ -1,0 +1,10 @@
+lastUpgrade=00933
+proj.pluginVersion=0.9.33
+proj.AppId=854460848275
+and.BundleId=com.whgames.Blitz
+proj.classDir=Assets
+proj.ConstantsClassName=GPGSIds
+and.ResourceData=%3c%3fxml+version%3d%221.0%22+encoding%3d%22utf-8%22%3f%3e%0d%0a%3c%21--%0d%0aGoogle+Play+game+services+IDs.%0d%0aSave+this+file+as+res%2fvalues%2fgames-ids.xml+in+your+project.%0d%0a--%3e%0d%0a%3cresources%3e%0d%0a++%3cstring+name%3d%22app_id%22%3e854460848275%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22package_name%22%3ecom.whgames.Blitz%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_500_points%22%3eCgkIk7HXju8YEAIQAg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_1000_points%22%3eCgkIk7HXju8YEAIQAw%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_2000_points%22%3eCgkIk7HXju8YEAIQBA%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_5000_points%22%3eCgkIk7HXju8YEAIQBQ%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22achievement_10000_points%22%3eCgkIk7HXju8YEAIQBg%3c%2fstring%3e%0d%0a++%3cstring+name%3d%22leaderboard_score%22%3eCgkIk7HXju8YEAIQAQ%3c%2fstring%3e%0d%0a%3c%2fresources%3e%0d%0a
+and.ClientId=
+proj.requireGPlus=false
+android.SetupDone=true

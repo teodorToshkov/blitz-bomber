@@ -182,6 +182,7 @@ GameObject:
   m_Component:
   - 4: {fileID: 642441872}
   - 114: {fileID: 642441871}
+  - 114: {fileID: 642441873}
   m_Layer: 0
   m_Name: Game Manager
   m_TagString: Untagged
@@ -223,6 +224,17 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 6
+--- !u!114 &642441873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 642441870}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 06c7ea2a8dde9444e9bd1b7788949d79, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &653926915
 GameObject:
   m_ObjectHideFlags: 0
@@ -396,7 +408,7 @@ Camera:
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 2
-  m_BackGroundColor: {r: 0.76862746, g: 0.5411765, b: 0.4117647, a: 1}
+  m_BackGroundColor: {r: 0.3137255, g: 0.627451, b: 0.6392157, a: 1}
   m_NormalizedViewPortRect:
     serializedVersion: 2
     x: 0
@@ -428,7 +440,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1244255602}
   m_LocalRotation: {x: 0.3535534, y: -0.3535534, z: 0.14644663, w: 0.85355335}
-  m_LocalPosition: {x: 63.7, y: 82.7, z: -63.7}
+  m_LocalPosition: {x: 63.7, y: 83, z: -63.7}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -749,7 +761,7 @@ MonoBehaviour:
     probability: 1
   - type: 6
     probability: 1
-  intervals: 1.7
+  intervals: 1.78
   numberOfStartPoisitions: 3
   parentObject: {fileID: 2022033360}
   positions:
