@@ -83,7 +83,7 @@ public class GameManager : MonoBehaviour
 	}
 
 	//! We update the rate at which the gameplay is going every frame if the user is playing
-	void Update ()
+	void FixedUpdate ()
 	{
 		// We chech if the game is on pause or not
 		if (isPlaying)

@@ -202,7 +202,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePlayQuickenRate: 0.5
-  gamePlayStartDifficulty: 3.6
+  gamePlayStartDifficulty: 3.3
   gamePlayEndDifficulty: 5
   _floorPrefabs:
   - {fileID: 11457670, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
@@ -754,11 +754,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets:
   - type: 0
-    probability: 46
+    probability: 95
   - type: 1
     probability: 1
   - type: 4
-    probability: 1
+    probability: 2
   - type: 2
     probability: 1
   - type: 6
