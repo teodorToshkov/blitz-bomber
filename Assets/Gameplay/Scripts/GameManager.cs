@@ -11,20 +11,48 @@ using System.Collections.Generic;
  * 	- whether the user is playing or not / whether the game is over or on pause or not;
  * 	- whether the game is over or not;
  * 	- what the current speed at which the gameplay is going is.
+ *  - information regarding the difficulty of the game at the given moment.
  * 
  * It stores a list of all floors, where we control how the floors are added/removed from the scene.
  */
 public class GameManager : MonoBehaviour
 {
 	public float gamePlayQuickenRate = 0.01f;	//!< the rate at which the gameplay quickens
-	public float gamePlayStartSpeed = 1f;		//!< the speed the gameplay starts at
-	public float gamePlaySpeedLimit = 2f;		//!< the limit speed the gameplay can reach
+	public float gamePlayStartDifficulty = 1f;	//!< the speed the gameplay starts at
+	public float gamePlayEndDifficulty = 2f;	//!< the limit speed the gameplay can reach
+
+	/// <summary>
+	/// The difficulty of the gameplay.
+	/// </summary>
+	public float difficulty
+	{
+		get
+		{
+			return (gamePlaySpeed * 10) /
+				(bullet.endurance * dropper.rechargerTime * numberOfSpawningPoints);
+		}
+		set
+		{
+			gamePlaySpeed = (value * 10) /
+				(bullet.endurance * dropper.rechargerTime * numberOfSpawningPoints);
+			Debug.Log ("difficulty: " + value + "; gameplay speed: " + gamePlaySpeed
+				+ "; blocks killed / second: " + bullet.endurance * dropper.rechargerTime
+				+ "; blocks spawned / second: " + numberOfSpawningPoints / spawningIntervals * gamePlaySpeed);
+		}
+	}
 	public Floor[] _floorPrefabs;				//!< __Prefabs__ of all floors we could instantiate
+
+	[SerializeField]
+	private OnClickSpawner dropper;				//!< a reference to the dropper's OnClickSpawner @note Used __only__ in calculating the difficulty
+	[SerializeField]
+	private BulletScript bullet;				//!< a reference to the bullet __Prefab__ @note Used __only__ in calculating the difficulty
 
 	public static bool isPlaying;				//!< stores information whether the player playing or not
 	public static bool isFinished;				//!< stores information whether the gameplay has or not reached an end i.e. the game is over
 	public static float gamePlaySpeed;			//!< the current speed of the gameplay, which is being increased through time
-	public static Dictionary<Floor.Type, Floor> floorPrefabs; //!< a static __Dictionary__ representation of **_floorPrefabs**
+	public static float spawningIntervals;		//!< the intervals, at which floors are being spawned. @note Used __only__ in calculating the difficulty
+	public static int numberOfSpawningPoints;	//!< the number of points, at which floors are being spawned. @note Used __only__ in calculating the difficulty
+	public static Dictionary<Floor.Type, Floor> floorPrefabs; //!< a static __Dictionary__ representation of _floorPrefabs
 	public static List<Floor> floors; /*!< A list of all floors which we have spawned
 										* regardless of whether or not they are currently active in the scene.\n
 										* A floor is never destroyed, a floor is just being set as inactive and reused later.
@@ -39,7 +67,7 @@ public class GameManager : MonoBehaviour
 	{
 		isPlaying = true;
 		isFinished = false;
-		gamePlaySpeed = gamePlayStartSpeed;
+
 		floors = new List<Floor> (100);
 		floorPrefabs = new Dictionary<Floor.Type, Floor> (10);
 		foreach (Floor floor in _floorPrefabs)
@@ -49,6 +77,9 @@ public class GameManager : MonoBehaviour
 			else
 				Debug.LogError ("Key " + floor.type + " already exists. Floor name: " + floor.name);
 		}
+
+		// We deal with the difficulty
+		difficulty = gamePlayStartDifficulty;
 	}
 
 	//! We update the rate at which the gameplay is going every frame if the user is playing
@@ -58,10 +89,17 @@ public class GameManager : MonoBehaviour
 		if (isPlaying)
 		{
 			// We increase the rate at which the gameplay is going if it does not go beyond the limit we have set
-			gamePlaySpeed = gamePlaySpeedLimit > gamePlayStartSpeed ?
-				Mathf.Min (gamePlaySpeedLimit, gamePlaySpeed + Time.deltaTime * gamePlayQuickenRate):
-				Mathf.Max (gamePlaySpeedLimit, gamePlaySpeed + Time.deltaTime * gamePlayQuickenRate);
+			difficulty = Mathf.Min (gamePlayEndDifficulty, gamePlayStartDifficulty + Time.timeSinceLevelLoad * gamePlayQuickenRate * 0.01f);
 		}
+	}
+
+	/// <summary>
+	/// Increases the number of spawning points.
+	/// </summary>
+	/// <param name="number">Number.</param>
+	public void IncreaseNumberOfSpawningPoints (int number)
+	{
+		numberOfSpawningPoints += number;
 	}
 
 	/// <summary>
@@ -152,6 +190,7 @@ public class GameManager : MonoBehaviour
 	//! We stop everything and say that the gameplay should stop
 	public static void EndGamePlay ()
 	{
+		GooglePlayServicesManager.ReportScore ();
 		isFinished = true;
 		isPlaying = false;
 	}

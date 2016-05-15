@@ -202,8 +202,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gamePlayQuickenRate: -0.01
-  gamePlayStartSpeed: 2.5
-  gamePlaySpeedLimit: 1
+  gamePlayStartDifficulty: 1
+  gamePlayEndDifficulty: 2
   _floorPrefabs:
   - {fileID: 11457670, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
   - {fileID: 11471300, guid: f3031946d41cba444945bef31effb7f4, type: 2}
@@ -212,6 +212,8 @@ MonoBehaviour:
   - {fileID: 11405944, guid: 656d4a9bf1ca5ea4ab6c904806b4c170, type: 2}
   - {fileID: 11496676, guid: 6b1fa1048ee3f1748b29db207bdb4777, type: 2}
   - {fileID: 11411460, guid: 60fb33f19775a7148a44d54352a88566, type: 2}
+  dropper: {fileID: 0}
+  bullet: {fileID: 0}
 --- !u!4 &642441872
 Transform:
   m_ObjectHideFlags: 0
@@ -761,7 +763,7 @@ MonoBehaviour:
     probability: 1
   - type: 6
     probability: 1
-  intervals: 1.78
+  intervals: 1.4833333
   numberOfStartPoisitions: 3
   parentObject: {fileID: 2022033360}
   positions:
@@ -850,6 +852,17 @@ MonoBehaviour:
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
           m_IntArgument: 0
           m_FloatArgument: 0.55
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 642441871}
+        m_MethodName: IncreaseNumberOfSpawningPoints
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
@@ -1019,7 +1032,7 @@ MonoBehaviour:
   x1: 7.4
   x2: 9.6
   speed: 2.5
-  gamePlaySpeedEffectorFactor: -0.1
+  gamePlaySpeedEffectorFactor: 0.2
 --- !u!114 &1720354843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1033,7 +1046,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   target: {fileID: 119740, guid: 201f9eaf3be6e464cae92404bcaf0bbb, type: 2}
   offset: {x: 0, y: -0.5, z: 0}
-  rechargerTime: 0.85
+  rechargerTime: 0.9
   gamePlaySpeedEffectorFactor: 0
   debugMode: 0
 --- !u!114 &1720354844

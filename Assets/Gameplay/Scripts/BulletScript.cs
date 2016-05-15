@@ -18,7 +18,7 @@ public class BulletScript : MonoBehaviour
 			StartCoroutine (RemoveFloor (other.gameObject));
 
 			// We decrease the number of floors the bullet can destroy before it itself is being detroyed
-			if (--endurance == 0)
+			if (endurance-- == 0)
 				// If the number we can detroy is 0, then the bullet's life is over and we destroy it
 				Destroy (gameObject);
 		}
