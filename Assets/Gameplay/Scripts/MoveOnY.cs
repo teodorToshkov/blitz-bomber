@@ -6,7 +6,7 @@ using System.Collections;
  */
 public class MoveOnY : MonoBehaviour
 {
-	[Range(-5, 5)]
+	[Range(-10, 5)]
 	public float speed = 0.5f; //!< The rate at which the object is going to travel
 	public float gamePlaySpeedEffectorFactor = 1f; //!< the factor by which the speed is affected by GameManager.gamePlaySpeed
 

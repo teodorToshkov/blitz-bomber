@@ -17,9 +17,8 @@ using System.Collections.Generic;
  */
 public class GameManager : MonoBehaviour
 {
-	public float gamePlayQuickenRate = 0.01f;	//!< the rate at which the gameplay quickens
-	public float gamePlayStartDifficulty = 1f;	//!< the speed the gameplay starts at
-	public float gamePlayEndDifficulty = 2f;	//!< the limit speed the gameplay can reach
+	[SerializeField]
+	private AnimationCurve difficultyCurve;		//!< the curve, the difficulty follows through time @note The time is in minutes!
 
 	/// <summary>
 	/// The difficulty of the gameplay.
@@ -35,9 +34,10 @@ public class GameManager : MonoBehaviour
 		{
 			gamePlaySpeed = (value * 10) /
 				(bullet.endurance * dropper.rechargerTime * numberOfSpawningPoints);
-			Debug.Log ("difficulty: " + value + "; gameplay speed: " + gamePlaySpeed
-				+ "; blocks killed / second: " + bullet.endurance * dropper.rechargerTime
-				+ "; blocks spawned / second: " + numberOfSpawningPoints / spawningIntervals * gamePlaySpeed);
+			Debug.Log ("time: " + (int)((Time.time - startTime) / 60) + "m "
+				+ "; difficulty: " + value.ToString("F1")+ "; gameplay speed: " + gamePlaySpeed.ToString("F1")
+				+ "; destroyed / s: " + (bullet.endurance * dropper.rechargerTime).ToString("F1")
+				+ "; spawned / s: " + (numberOfSpawningPoints / spawningIntervals * gamePlaySpeed).ToString("F1"));
 		}
 	}
 	public Floor[] _floorPrefabs;				//!< __Prefabs__ of all floors we could instantiate
@@ -46,6 +46,9 @@ public class GameManager : MonoBehaviour
 	private OnClickSpawner dropper;				//!< a reference to the dropper's OnClickSpawner @note Used __only__ in calculating the difficulty
 	[SerializeField]
 	private BulletScript bullet;				//!< a reference to the bullet __Prefab__ @note Used __only__ in calculating the difficulty
+	[SerializeField]
+	private bool _debugMode = false;
+
 
 	public static bool isPlaying;				//!< stores information whether the player playing or not
 	public static bool isFinished;				//!< stores information whether the gameplay has or not reached an end i.e. the game is over
@@ -57,6 +60,9 @@ public class GameManager : MonoBehaviour
 										* regardless of whether or not they are currently active in the scene.\n
 										* A floor is never destroyed, a floor is just being set as inactive and reused later.
 										*/
+	public static bool debugMode = false;
+
+	private float startTime;
 
 	//! Initialization
 	/*! 
@@ -67,6 +73,8 @@ public class GameManager : MonoBehaviour
 	{
 		isPlaying = true;
 		isFinished = false;
+		debugMode = _debugMode;
+		startTime = Time.time;
 
 		floors = new List<Floor> (100);
 		floorPrefabs = new Dictionary<Floor.Type, Floor> (10);
@@ -78,18 +86,20 @@ public class GameManager : MonoBehaviour
 				Debug.LogError ("Key " + floor.type + " already exists. Floor name: " + floor.name);
 		}
 
-		// We deal with the difficulty
-		difficulty = gamePlayStartDifficulty;
+		// We initialize with the difficulty
+		difficulty = difficultyCurve.Evaluate (0);
 	}
 
 	//! We update the rate at which the gameplay is going every frame if the user is playing
 	void FixedUpdate ()
 	{
+		debugMode = _debugMode;
+		Time.timeScale = debugMode ? 2 : 1;
 		// We chech if the game is on pause or not
 		if (isPlaying)
 		{
-			// We increase the rate at which the gameplay is going if it does not go beyond the limit we have set
-			difficulty = Mathf.Min (gamePlayEndDifficulty, gamePlayStartDifficulty + Time.timeSinceLevelLoad * gamePlayQuickenRate * 0.01f);
+			// We get the time, at which we are converted to minutes and get the right point from the difficultyCurve
+			difficulty = difficultyCurve.Evaluate ((Time.time - startTime) / 60);
 		}
 	}
 

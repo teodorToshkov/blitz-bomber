@@ -25,10 +25,10 @@ public class SwitchBetweenXs : MonoBehaviour
 		// We store the current position in a buffer
 		Vector3 newPosition = transform.position;
 		// If the position is less than the minimum allowed we switch the direction at which we are moving the object
-		if (transform.position.x < x1)
+		if (transform.position.x < (GameManager.debugMode ? x1 - 0.3f : x1))
 			switchDirection = false;
 		// If the position is more than the maximum allowed we switch the direction at which we are moving the object
-		else if (transform.position.x > x2)
+		else if (transform.position.x > (GameManager.debugMode ? x2 + 0.3f : x2))
 			switchDirection = true;
 		// If we are going in the left direction we move the object to the left
 		if (switchDirection)

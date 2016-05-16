@@ -201,9 +201,27 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1a7fed81e9b6f1042940454aedd39c64, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gamePlayQuickenRate: 0.5
-  gamePlayStartDifficulty: 3.3
-  gamePlayEndDifficulty: 5
+  difficultyCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 2.5
+      inSlope: 0.2
+      outSlope: 0.2
+      tangentMode: 10
+    - time: 5
+      value: 3.5
+      inSlope: 0.20689654
+      outSlope: 0.04351077
+      tangentMode: 1
+    - time: 40
+      value: 5
+      inSlope: 0.042613637
+      outSlope: 0.033333335
+      tangentMode: 1
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   _floorPrefabs:
   - {fileID: 11457670, guid: 7b3cbdd5d8821e64a890350486298c9e, type: 2}
   - {fileID: 11471300, guid: f3031946d41cba444945bef31effb7f4, type: 2}
@@ -214,6 +232,7 @@ MonoBehaviour:
   - {fileID: 11411460, guid: 60fb33f19775a7148a44d54352a88566, type: 2}
   dropper: {fileID: 1720354843}
   bullet: {fileID: 11444238, guid: 201f9eaf3be6e464cae92404bcaf0bbb, type: 2}
+  _debugMode: 0
 --- !u!4 &642441872
 Transform:
   m_ObjectHideFlags: 0
@@ -1048,7 +1067,6 @@ MonoBehaviour:
   offset: {x: 0, y: -0.5, z: 0}
   rechargerTime: 1
   gamePlaySpeedEffectorFactor: 0
-  debugMode: 0
 --- !u!114 &1720354844
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -15,9 +15,6 @@ public class OnClickSpawner : MonoBehaviour
 
 	private float timeoutTime = 0; //!< holds information about when it is time to spawn
 
-	[SerializeField]
-	private bool debugMode = false;
-
 	void Update ()
 	{
 		// If there is still time until we can next spawn, we decrease it if the gameplay is going
@@ -26,10 +23,10 @@ public class OnClickSpawner : MonoBehaviour
 			timeoutTime -= Time.deltaTime;
 		}
 		// If the screen is touched/clicked and we are allowed to, we spawn
-		if (Input.GetMouseButtonDown (0) || debugMode)
+		if (Input.GetMouseButtonDown (0) || GameManager.debugMode)
 		{
 			// If the gameplay is not playing, we resume it without spawning anything
-			if (!GameManager.isPlaying && !debugMode)
+			if (!GameManager.isPlaying && !GameManager.debugMode)
 				GameManager.ResumeGamePlay ();
 			// If the gameplay is going, we spawn our object and set a timeout for when we can next spawn
 			else if (timeoutTime <= float.Epsilon)
