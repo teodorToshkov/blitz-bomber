@@ -608,7 +608,6 @@ GameObject:
   m_Component:
   - 4: {fileID: 1606478460}
   - 33: {fileID: 1606478459}
-  - 64: {fileID: 1606478458}
   - 23: {fileID: 1606478457}
   m_Layer: 0
   m_Name: Background
@@ -643,18 +642,6 @@ MeshRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingOrder: 0
---- !u!64 &1606478458
-MeshCollider:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1606478456}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Convex: 0
-  m_Mesh: {fileID: 10210, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &1606478459
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -775,7 +762,7 @@ MonoBehaviour:
   - type: 0
     probability: 46
   - type: 1
-    probability: 1
+    probability: 10
   - type: 4
     probability: 1
   - type: 2

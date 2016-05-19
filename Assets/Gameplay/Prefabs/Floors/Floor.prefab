@@ -13,6 +13,7 @@ GameObject:
   - 23: {fileID: 2323872}
   - 114: {fileID: 11468852}
   - 114: {fileID: 11457670}
+  - 95: {fileID: 9586120}
   m_Layer: 0
   m_Name: Floor
   m_TagString: Destroyable
@@ -77,6 +78,23 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!95 &9586120
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 107144}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 15948e03946239a4b8d9dd34de99025c, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
 --- !u!114 &11457670
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -90,6 +108,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 0
   moveOnY: {fileID: 0}
+  destroyedFloor: {fileID: 107144, guid: 15d04b71848799f499fd4291d29cf561, type: 2}
 --- !u!114 &11468852
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -30,6 +30,8 @@ public class Floor : MonoBehaviour
 	[HideInInspector]
 	public MoveOnY moveOnY; //!< a reference to the __MoveOnY__ component of the __GameObject__
 
+	public GameObject destroyedFloor;
+
 	/// <summary>
 	/// Sets the reference moveOnY to the component in the __GameObject__: <code>moveOnY = GetComponent<MoveOnY> ();</code>
 	/// </summary>
@@ -45,6 +47,10 @@ public class Floor : MonoBehaviour
 	{
 		// We increase the score of the player
 		ThreeDNumber.IncreaseWith (1);
+
+		if (destroyedFloor != null)
+			GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity);
+
 		gameObject.SetActive (false);
 	}
 }
