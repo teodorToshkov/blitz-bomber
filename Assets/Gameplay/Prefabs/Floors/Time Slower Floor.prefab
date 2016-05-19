@@ -132,6 +132,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 4
   moveOnY: {fileID: 0}
+  destroyedFloor: {fileID: 107144, guid: f4e946d497a2997429c1d1b9da853611, type: 2}
   time: 2
   slowDownRate: 0.5
 --- !u!212 &21277030

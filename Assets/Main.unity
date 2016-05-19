@@ -762,7 +762,7 @@ MonoBehaviour:
   - type: 0
     probability: 46
   - type: 1
-    probability: 10
+    probability: 1
   - type: 4
     probability: 1
   - type: 2

@@ -119,6 +119,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 8
   moveOnY: {fileID: 0}
+  destroyedFloor: {fileID: 107144, guid: f4e946d497a2997429c1d1b9da853611, type: 2}
 --- !u!114 &11465288
 MonoBehaviour:
   m_ObjectHideFlags: 1

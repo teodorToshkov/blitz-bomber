@@ -40,6 +40,10 @@ public class TimeSlowerFloorScript : Floor
 
 		Time.timeScale *= 1 - (slowDownRate / numberOfFloorsDestroyed);
 
+		destroyedFloor.SetActive (true);
+		if (destroyedFloor != null)
+			GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity);
+
 		Invoke ("Desactivate", time);
 	}
 
@@ -59,6 +63,7 @@ public class TimeSlowerFloorScript : Floor
 		GetComponent<Renderer> ().enabled = true;
 		transform.GetChild(0).gameObject.SetActive (true);
 
+		destroyedFloor.SetActive (false);
 		base.Destroy ();
 	}
 }

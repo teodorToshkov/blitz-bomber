@@ -119,7 +119,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 1
   moveOnY: {fileID: 0}
-  radius: 5
+  destroyedFloor: {fileID: 107144, guid: 341da38a76db7264f9d747bdf1c08663, type: 2}
+  radius: 10
+  force: 100
   destructionBlast: {fileID: 11494170, guid: 1a03c437a34dae54286c7aa96dfb82ec, type: 2}
 --- !u!114 &11485922
 MonoBehaviour:
