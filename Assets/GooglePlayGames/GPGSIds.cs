@@ -21,7 +21,8 @@
 /// Resources.
 ///
 
-
+namespace GooglePlayGames
+{
 public static class GPGSIds
 {
         public const string leaderboard_score = "CgkIk7HXju8YEAIQAQ"; // <GPGSID>
@@ -32,4 +33,4 @@ public static class GPGSIds
         public const string achievement_500_points = "CgkIk7HXju8YEAIQAg"; // <GPGSID>
 
 }
-
+}

@@ -436,8 +436,8 @@ Camera:
     y: 0
     width: 1
     height: 1
-  near clip plane: 0.3
-  far clip plane: 1000
+  near clip plane: 100
+  far clip plane: 140
   field of view: 60
   orthographic: 1
   orthographic size: 6
@@ -773,16 +773,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   targets:
   - type: 0
-    probability: 95
+    probability: 46
   - type: 1
     probability: 1
   - type: 4
-    probability: 2
+    probability: 1
   - type: 2
     probability: 1
   - type: 6
     probability: 1
-  intervals: 1.4833333
+  intervals: 1.46
   numberOfStartPoisitions: 3
   parentObject: {fileID: 2022033360}
   positions:
@@ -1132,7 +1132,7 @@ Light:
   serializedVersion: 6
   m_Type: 1
   m_Color: {r: 1, g: 1, b: 1, a: 1}
-  m_Intensity: 0.7
+  m_Intensity: 0.8
   m_Range: 10
   m_SpotAngle: 30
   m_CookieSize: 10

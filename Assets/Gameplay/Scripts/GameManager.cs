@@ -34,10 +34,10 @@ public class GameManager : MonoBehaviour
 		{
 			gamePlaySpeed = (value * 10) /
 				(bullet.endurance * dropper.rechargerTime * numberOfSpawningPoints);
-			Debug.Log ("time: " + (int)((Time.time - startTime) / 60) + "m "
+			/*Debug.Log ("time: " + (int)((Time.time - startTime) / 60) + "m "
 				+ "; difficulty: " + value.ToString("F1")+ "; gameplay speed: " + gamePlaySpeed.ToString("F1")
 				+ "; destroyed / s: " + (bullet.endurance * dropper.rechargerTime).ToString("F1")
-				+ "; spawned / s: " + (numberOfSpawningPoints / spawningIntervals * gamePlaySpeed).ToString("F1"));
+				+ "; spawned / s: " + (numberOfSpawningPoints / spawningIntervals * gamePlaySpeed).ToString("F1"));*/
 		}
 	}
 	public Floor[] _floorPrefabs;				//!< __Prefabs__ of all floors we could instantiate
@@ -93,8 +93,11 @@ public class GameManager : MonoBehaviour
 	//! We update the rate at which the gameplay is going every frame if the user is playing
 	void FixedUpdate ()
 	{
-		debugMode = _debugMode;
-		Time.timeScale = debugMode ? 2 : 1;
+		if (debugMode != _debugMode)
+		{
+			debugMode = _debugMode;
+			Time.timeScale = debugMode ? 2 : 1;
+		}
 		// We chech if the game is on pause or not
 		if (isPlaying)
 		{
