@@ -91,6 +91,8 @@ MonoBehaviour:
   type: 0
   moveOnY: {fileID: 0}
   destroyedFloor: {fileID: 107144, guid: 15d04b71848799f499fd4291d29cf561, type: 2}
+  color: {r: 0.78431374, g: 0.5882353, b: 0.3647059, a: 1}
+  sprite: {fileID: 21300000, guid: be462b72a6b69bc44ae37cfe865e7d55, type: 3}
 --- !u!114 &11468852
 MonoBehaviour:
   m_ObjectHideFlags: 1

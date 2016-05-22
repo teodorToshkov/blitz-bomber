@@ -153,6 +153,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 6
   moveOnY: {fileID: 0}
+  destroyedFloor: {fileID: 0}
+  color: {r: 1, g: 1, b: 1, a: 0.334}
+  sprite: {fileID: 21300000, guid: be462b72a6b69bc44ae37cfe865e7d55, type: 3}
 --- !u!114 &11468852
 MonoBehaviour:
   m_ObjectHideFlags: 1

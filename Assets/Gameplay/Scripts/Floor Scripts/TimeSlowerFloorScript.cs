@@ -40,9 +40,22 @@ public class TimeSlowerFloorScript : Floor
 
 		Time.timeScale *= 1 - (slowDownRate / numberOfFloorsDestroyed);
 
-		destroyedFloor.SetActive (true);
+		destroyedFloor.gameObject.SetActive (true);
 		if (destroyedFloor != null)
 			GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity);
+
+		// We increase the score of the player
+		ThreeDNumber.IncreaseWith (1);
+
+		if (destroyedFloor != null)
+		{
+			DestroyedFloorInitializer destroyedFloorInitializer = (GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity)
+				as GameObject).GetComponent<DestroyedFloorInitializer> ();
+			if (color != null)
+				destroyedFloorInitializer.color = color;
+			if (sprite != null)
+				destroyedFloorInitializer.sprite = sprite;
+		}
 
 		Invoke ("Desactivate", time);
 	}
@@ -63,7 +76,6 @@ public class TimeSlowerFloorScript : Floor
 		GetComponent<Renderer> ().enabled = true;
 		transform.GetChild(0).gameObject.SetActive (true);
 
-		destroyedFloor.SetActive (false);
-		base.Destroy ();
+		gameObject.SetActive (false);
 	}
 }

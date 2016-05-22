@@ -31,6 +31,8 @@ public class Floor : MonoBehaviour
 	public MoveOnY moveOnY; //!< a reference to the __MoveOnY__ component of the __GameObject__
 
 	public GameObject destroyedFloor;
+	public Color color;
+	public Sprite sprite;
 
 	/// <summary>
 	/// Sets the reference moveOnY to the component in the __GameObject__: <code>moveOnY = GetComponent<MoveOnY> ();</code>
@@ -38,6 +40,10 @@ public class Floor : MonoBehaviour
 	void Awake ()
 	{
 		moveOnY = GetComponent<MoveOnY> ();
+	}
+
+	void Start ()
+	{
 	}
 
 	/// <summary>
@@ -49,7 +55,14 @@ public class Floor : MonoBehaviour
 		ThreeDNumber.IncreaseWith (1);
 
 		if (destroyedFloor != null)
-			GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity);
+		{
+			DestroyedFloorInitializer destroyedFloorInitializer = (GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity)
+				as GameObject).GetComponent<DestroyedFloorInitializer> ();
+			if (color != null)
+				destroyedFloorInitializer.color = color;
+			if (sprite != null)
+				destroyedFloorInitializer.sprite = sprite;
+		}
 
 		gameObject.SetActive (false);
 	}

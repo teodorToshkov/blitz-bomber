@@ -132,7 +132,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   type: 2
   moveOnY: {fileID: 0}
-  destroyedFloor: {fileID: 107144, guid: f4e946d497a2997429c1d1b9da853611, type: 2}
+  destroyedFloor: {fileID: 107144, guid: 15d04b71848799f499fd4291d29cf561, type: 2}
+  color: {r: 0.13534619, g: 0.36439356, b: 0.39215687, a: 1}
+  sprite: {fileID: 21300000, guid: 7b7de2430deee964da27ba2590989b37, type: 3}
   lightning: {fileID: 151038, guid: 4b38a3df05dc9364f8b95a0576b5732b, type: 2}
 --- !u!212 &21241912
 SpriteRenderer:
