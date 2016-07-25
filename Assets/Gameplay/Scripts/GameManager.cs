@@ -61,8 +61,8 @@ public class GameManager : MonoBehaviour
 										* A floor is never destroyed, a floor is just being set as inactive and reused later.
 										*/
 	public static bool debugMode = false;
-
-	private float startTime;
+    
+    private float timeSinceLevelLoad = 0;
 
 	//! Initialization
 	/*! 
@@ -74,7 +74,6 @@ public class GameManager : MonoBehaviour
 		isPlaying = true;
 		isFinished = false;
 		debugMode = _debugMode;
-		startTime = Time.time;
 
 		floors = new List<Floor> (100);
 		floorPrefabs = new Dictionary<Floor.Type, Floor> (10);
@@ -101,10 +100,20 @@ public class GameManager : MonoBehaviour
 		// We chech if the game is on pause or not
 		if (isPlaying)
 		{
+            timeSinceLevelLoad += Time.fixedDeltaTime;
+
 			// We get the time, at which we are converted to minutes and get the right point from the difficultyCurve
-			difficulty = difficultyCurve.Evaluate ((Time.time - startTime) / 60);
+			difficulty = difficultyCurve.Evaluate (timeSinceLevelLoad / 60);
 		}
 	}
+
+    /// <summary>
+    /// a local function for pausing the gameplay
+    /// </summary>
+    public void pauseGamePlay ()
+    {
+        StopGamePlay();
+    }
 
 	/// <summary>
 	/// Increases the number of spawning points.
@@ -178,16 +187,16 @@ public class GameManager : MonoBehaviour
 		if (floor == null)
 			return;
 		floor.Destroy ();
-	}
+    }
 
-	//! Stops everything withing the gameplay
-	public static void StopGamePlay ()
-	{
-		isPlaying = false;
-	}
+    //! Stops everything withing the gameplay
+    public static void StopGamePlay()
+    {
+        isPlaying = false;
+    }
 
-	//! Resumes or restarts the gameplay
-	public static void ResumeGamePlay ()
+    //! Resumes or restarts the gameplay
+    public static void ResumeGamePlay ()
 	{
 		isPlaying = true;
 		// If the game is over, we need to restart the gameplay

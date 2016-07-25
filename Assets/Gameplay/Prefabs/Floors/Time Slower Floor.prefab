@@ -45,6 +45,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.50500023}
   m_LocalScale: {x: 0.7777778, y: 0.7777778, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 474802}
   m_RootOrder: 0
@@ -57,6 +58,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 8.5, y: 0, z: -8.5}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 443088}
   m_Father: {fileID: 0}
@@ -137,6 +139,10 @@ MonoBehaviour:
   sprite: {fileID: 21300000, guid: 08899c7b95056de458c07a171209ec23, type: 3}
   time: 2
   slowDownRate: 0.5
+  startBottomColor: {r: 0.5372549, g: 0.7137255, b: 0.6627451, a: 1}
+  startTopColor: {r: 0.101960786, g: 0.54509807, b: 0.61960787, a: 1}
+  targetBottomColor: {r: 0.9882353, g: 0.76862746, b: 0.7411765, a: 1}
+  targetTopColor: {r: 0.359, g: 0.489, b: 0.6901961, a: 1}
 --- !u!212 &21277030
 SpriteRenderer:
   m_ObjectHideFlags: 1

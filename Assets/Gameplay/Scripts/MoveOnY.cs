@@ -36,7 +36,7 @@ public class MoveOnY : MonoBehaviour
 		// We shouldn't change the position if the game is on pause or over
 		if (!GameManager.isPlaying || !isMoving)
 			return;
-
+        
 		// We multiply the speed at which to travel by the rate at which the gameplay should go
 		float newSpeed = speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
 

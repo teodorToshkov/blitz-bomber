@@ -45,6 +45,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -8.5}
   m_LocalScale: {x: 0.9, y: 0.9, z: 0.9}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children:
   - {fileID: 472370}
   m_Father: {fileID: 0}
@@ -58,6 +59,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: -0.50500023}
   m_LocalScale: {x: 0.88888896, y: 0.88888896, z: 1}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_Children: []
   m_Father: {fileID: 455366}
   m_RootOrder: 0
@@ -127,13 +129,13 @@ MonoBehaviour:
   m_GameObject: {fileID: 162470}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 971215c7a2fae7847806df004e97eb66, type: 3}
+  m_Script: {fileID: 11500000, guid: c2d437587cc4a89479d4ec9020b48719, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   type: 2
   moveOnY: {fileID: 0}
   destroyedFloor: {fileID: 107144, guid: 15d04b71848799f499fd4291d29cf561, type: 2}
-  color: {r: 0.13534619, g: 0.36439356, b: 0.39215687, a: 1}
+  color: {r: 0.13333334, g: 0.36078432, b: 0.39215687, a: 1}
   sprite: {fileID: 21300000, guid: 7b7de2430deee964da27ba2590989b37, type: 3}
   lightning: {fileID: 151038, guid: 4b38a3df05dc9364f8b95a0576b5732b, type: 2}
 --- !u!212 &21241912

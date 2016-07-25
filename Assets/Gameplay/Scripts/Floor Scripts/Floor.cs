@@ -16,12 +16,7 @@ public class Floor : MonoBehaviour
 								*/
 		Freeze,				//!< Freezes floors within a certain range / Freezes everything but the _dropper_
 		TimeSlower,			//!< Time.timeScale = &lt;value&gt;
-		Durable,			//!< A more durable Floor (does more damage to the GameObjects with a Destroyer tag) \todo Implement this!
-		BulletBooster,		//!< A floor which makes the bullet it is destroyed by indestructible
-		SuperBulletsGun,	//!< Indestructible bullets
-		Laser,				//!< Destroys everything on its way
-		MultipleBulletsGun,	//!< Shoots 3-5-7 bullets at a time in different directions
-		RapidFireGun		//!< Fires much faster (maybe 10 times faster)
+		BulletBooster		//!< A floor which makes the bullet it is destroyed by indestructible
 	};
 
 	[SerializeField]

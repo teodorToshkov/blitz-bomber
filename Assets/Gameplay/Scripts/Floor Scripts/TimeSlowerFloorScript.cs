@@ -17,8 +17,18 @@ public class TimeSlowerFloorScript : Floor
 {
 	public float time = 1f;				//!< the time for which everything will be slowed down.
 	public float slowDownRate = 0.5f;	//!< the rate at which everything will be slowed down.
+    private ChangeBackground background;
+    public Color startBottomColor;
+    public Color startTopColor;
+    public Color targetBottomColor;
+    public Color targetTopColor;
 
-	private static int numberOfFloorsDestroyed;	//!< the number of __Floors__ that are currently slowing the time down.
+    private static int numberOfFloorsDestroyed;	//!< the number of __Floors__ that are currently slowing the time down.
+
+    void Start ()
+    {
+        background = GameObject.Find("Background").GetComponent<ChangeBackground>();
+    }
 
 	//! Holds information about what happents when the __Floor__ is destroyed, can be called from other scripts.
 	/*!
@@ -41,8 +51,6 @@ public class TimeSlowerFloorScript : Floor
 		Time.timeScale *= 1 - (slowDownRate / numberOfFloorsDestroyed);
 
 		destroyedFloor.gameObject.SetActive (true);
-		if (destroyedFloor != null)
-			GameObject.Instantiate (destroyedFloor, transform.position, Quaternion.identity);
 
 		// We increase the score of the player
 		ThreeDNumber.IncreaseWith (1);
@@ -56,6 +64,8 @@ public class TimeSlowerFloorScript : Floor
 			if (sprite != null)
 				destroyedFloorInitializer.sprite = sprite;
 		}
+
+        background.ChangeTo(targetBottomColor, targetTopColor);
 
 		Invoke ("Desactivate", time);
 	}
@@ -76,6 +86,8 @@ public class TimeSlowerFloorScript : Floor
 		GetComponent<Renderer> ().enabled = true;
 		transform.GetChild(0).gameObject.SetActive (true);
 
-		gameObject.SetActive (false);
+        background.ChangeTo(startBottomColor, startTopColor);
+
+        gameObject.SetActive (false);
 	}
 }
