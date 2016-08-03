@@ -47,7 +47,7 @@ public class Floor : MonoBehaviour
 	public virtual void Destroy ()
 	{
 		// We increase the score of the player
-		ThreeDNumber.IncreaseWith (1);
+		UI.ThreeDNumber.IncreaseWith (1);
 
 		if (destroyedFloor != null)
 		{

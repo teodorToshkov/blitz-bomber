@@ -160,7 +160,7 @@ PlayerSettings:
   AndroidTargetDevice: 3
   AndroidSplashScreenScale: 0
   androidSplashScreen: {fileID: 0}
-  AndroidKeystoreName: C:/Users/Teodor Toshkov/Documents/Games/BlitzBomber/user.keystore
+  AndroidKeystoreName: E:/teodo/Games/Blitz Bomber/user.keystore
   AndroidKeyaliasName: blitz cube bomber
   AndroidTVCompatibility: 0
   AndroidIsGame: 1

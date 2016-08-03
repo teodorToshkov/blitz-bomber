@@ -53,7 +53,7 @@ public class TimeSlowerFloorScript : Floor
 		destroyedFloor.gameObject.SetActive (true);
 
 		// We increase the score of the player
-		ThreeDNumber.IncreaseWith (1);
+		UI.ThreeDNumber.IncreaseWith (1);
 
 		if (destroyedFloor != null)
 		{

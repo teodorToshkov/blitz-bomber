@@ -43,8 +43,8 @@ public class GooglePlayServicesManager : MonoBehaviour
 	/// </summary>
 	public static void ReportScore ()
 	{
-		Social.ReportScore (ThreeDNumber.GetNumber(), GPGSIds.leaderboard_score, (bool success) => {
-			Debug.Log (PlayGamesPlatform.Instance.GetUserDisplayName() + " reporting a score of " + ThreeDNumber.GetNumber() + ": "
+		Social.ReportScore (UI.ThreeDNumber.GetNumber(), GPGSIds.leaderboard_score, (bool success) => {
+			Debug.Log (PlayGamesPlatform.Instance.GetUserDisplayName() + " reporting a score of " + UI.ThreeDNumber.GetNumber() + ": "
 				+ (success ? "Successful!" : "Unsuccessful!"));
 		});
 	}
