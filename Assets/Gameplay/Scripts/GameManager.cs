@@ -179,7 +179,7 @@ public class GameManager : MonoBehaviour
             newGameObj.transform.SetParent(parentObject);
             newGameObj.transform.localPosition = position;
         }
-        else Debug.LogError("Floor.Type " + floorType + "was not found!");
+        else Debug.LogError("Floor.Type " + floorType + " was not found!");
     }
 
     //! Removes a floor from the list and destroys it
