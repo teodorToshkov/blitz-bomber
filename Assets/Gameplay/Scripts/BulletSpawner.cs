@@ -8,6 +8,7 @@ using System.Collections;
 public class BulletSpawner : MonoBehaviour
 {
     public GameObject target; //!< the GameObject we are going to spawn
+    public Transform parent; //!< the GameObject we are going to set as a parent of the object
     public Vector3 offset; //!< the offset of the spawner's position the spawnee's initial position will be
     public float rechargerTime; //!< the time that has to pass before we can spawn again
 
@@ -22,7 +23,8 @@ public class BulletSpawner : MonoBehaviour
         {
             // We spawn the object and set the time that has to pass until we can next spawn to
             // the timeout devided by the rate at which the gameplay is running
-            GameObject.Instantiate(target, transform.position + offset, Quaternion.identity);
+            GameObject newBullet = GameObject.Instantiate(target, transform.position + offset, Quaternion.identity) as GameObject;
+            newBullet.transform.SetParent(parent);
             timeoutTime = rechargerTime / (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
         }
     }
@@ -32,6 +34,6 @@ public class BulletSpawner : MonoBehaviour
     {
         // If there is still time until we can next spawn, we decrease it if the gameplay is going
         if (timeoutTime > float.Epsilon && GameManager.isPlaying)
-            timeoutTime -= Time.deltaTime * GameManager.gamePlaySpeed;
+            timeoutTime -= Time.deltaTime;
     }
 }

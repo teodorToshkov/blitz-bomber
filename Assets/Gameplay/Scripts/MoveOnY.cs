@@ -14,14 +14,6 @@ public class MoveOnY : MonoBehaviour
 	public bool isMoving;
 
 	/// <summary>
-	/// Sets the _bool_ __isMoving__ to the current state of the game <code>isMoving = GameManager.isPlaying;</code>
-	/// </summary>
-	void Start ()
-	{
-		isMoving = GameManager.isPlaying;
-	}
-
-	/// <summary>
 	/// Makes the __GameObjects__ continue its movement (no smoothing)
 	/// </summary>
 	public void StartMoving ()
@@ -32,9 +24,10 @@ public class MoveOnY : MonoBehaviour
 	//! Update is called once per frame
 	//! We update the object's position
 	void Update ()
-	{
-		// We shouldn't change the position if the game is on pause or over
-		if (!GameManager.isPlaying || !isMoving)
+    {
+        isMoving = GameManager.isPlaying;
+        // We shouldn't change the position if the game is on pause or over
+        if (!GameManager.isPlaying || !isMoving)
 			return;
         
 		// We multiply the speed at which to travel by the rate at which the gameplay should go

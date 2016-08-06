@@ -29,8 +29,18 @@ namespace UI
         public Vector3 offest; //!< the offset which the digits should have between each other
         public GameObject[] digits; //!< the models of the digits
 
+        public Interpolate.AnimationType type;  //!< The type of animation we will use
+        public float duration;          //!< The duration of the animation
+
         private static int staticNumber = 0; //!< stores the value of the number representing our score
         private int _number = -1; //!< the number in the object we are looking at
+
+        private float startTime;        //!< The time at which the animation starts
+        private int startPosition;  //!< The position at which the animation starts
+        private int currentPosition;//!< A holder for the current position, which we can manipulate more easily
+        private int targetPosition; //!< The position which we are aiming at
+
+        private float interval = 0.02f;	//!< The intervals of time we are going to update the position at
 
         // Update is called once per frame
         /// <summary>
@@ -100,9 +110,62 @@ namespace UI
         /// <summary>
         /// Sets the number to be equal to 0
         /// </summary>
+        public void _ResetNumber()
+        {
+            staticNumber = 0;
+        }
+
+        /// <summary>
+        /// Sets the number to be equal to 0
+        /// </summary>
         public static void ResetNumber()
         {
             staticNumber = 0;
+        }
+
+        /// <summary>
+        /// Plays an animation with a given target position.
+        /// </summary>
+        /// <param name="finalPosition">The position, which we are aiming at.</param>
+        public void PlayAnimation(int finalPosition)
+        {
+            targetPosition = finalPosition;
+
+            startTime = Time.time;
+            startPosition = staticNumber;
+            LoopAnimation();
+        }
+
+        /// <summary>
+        /// Loops the animation.
+        /// </summary>
+        void LoopAnimation()
+        {
+            if (Time.time < startTime + duration)
+            {
+                switch (this.type)
+                {
+                    case Interpolate.AnimationType.linear:
+                        currentPosition = (int)(Interpolate.Linear(startPosition, targetPosition, Time.time - startTime, duration));
+                        break;
+                    case Interpolate.AnimationType.easeIn:
+                        currentPosition = (int)(Interpolate.EaseInQuad(startPosition, targetPosition, Time.time - startTime, duration));
+                        break;
+                    case Interpolate.AnimationType.easeOut:
+                        currentPosition = (int)(Interpolate.EaseOutQuad(startPosition, targetPosition, Time.time - startTime, duration));
+                        break;
+                    case Interpolate.AnimationType.easeInOut:
+                        currentPosition = (int)(Interpolate.EaseInOutQuad(startPosition, targetPosition, Time.time - startTime, duration));
+                        break;
+                }
+
+                staticNumber = currentPosition;
+                Invoke("LoopAnimation", interval);
+            }
+            else
+            {
+                staticNumber = targetPosition;
+            }
         }
     }
 }

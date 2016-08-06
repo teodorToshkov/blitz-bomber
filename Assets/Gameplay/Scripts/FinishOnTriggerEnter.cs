@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.Events;
 
 /*! \brief This script makes the game session finish when a floor reaches the "Dropper"
  */
@@ -15,7 +16,7 @@ public class FinishOnTriggerEnter : MonoBehaviour
 		{
 			// If we have, we end the gameplay and show the result to the screen
 			GameManager.EndGamePlay ();
-			GameManager.ShowResult ();
+			GameManager.instance.ShowResult ();
 		}
 	}
 }

@@ -2,6 +2,7 @@
 using System.Collections;
 using UnityEngine.SceneManagement;
 using System.Collections.Generic;
+using UnityEngine.Events;
 
 /*! \brief This script is the manager that controls the main characteristics and behaviours of the gameplay\n
  * 		  and is what other scripts refer to when they need information about the state of the game.
@@ -42,8 +43,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private BulletScript bullet;                //!< a reference to the bullet __Prefab__ @note Used __only__ in calculating the difficulty
     [SerializeField]
+    private UI.ThreeDText highScore;                //!< a reference to the high score text script
+    [SerializeField]
     private bool _debugMode = false;
 
+    [Header("What to do when the game ends?")]
+    public UnityEvent onFinish;
+
+    public float delay;
+    public UnityEvent onFinishWithDelay;
 
     public static bool isPlaying;               //!< stores information whether the player playing or not
     public static bool isFinished;              //!< stores information whether the gameplay has or not reached an end i.e. the game is over
@@ -57,6 +65,8 @@ public class GameManager : MonoBehaviour
 										*/
     public static bool debugMode = false;
 
+    public static GameManager instance;
+
     private float timeSinceLevelLoad = 0;
 
     //! Initialization
@@ -66,6 +76,8 @@ public class GameManager : MonoBehaviour
 	*/
     void Start()
     {
+        instance = this;
+
         isPlaying = true;
         isFinished = false;
         debugMode = _debugMode;
@@ -214,10 +226,15 @@ public class GameManager : MonoBehaviour
         ResumeGamePlay();
     }
 
-    //! Resumes or restarts the gameplay
+    //! Resumes the gameplay
     public static void ResumeGamePlay()
     {
         isPlaying = true;
+    }
+
+    //! Restarts the gameplay
+    public void RestartGamePlay()
+    {
         // If the game is over, we need to restart the gameplay
         if (isFinished)
         {
@@ -237,8 +254,23 @@ public class GameManager : MonoBehaviour
     }
 
     //! \todo TO BE IMPLEMENTED
-    public static void ShowResult()
+    public void ShowResult()
     {
+        onFinish.Invoke();
+        int highscore = PlayerPrefs.GetInt("highscore", 0);
+        if (UI.ThreeDNumber.GetNumber() > highscore)
+        {
+            PlayerPrefs.SetInt("highscore", UI.ThreeDNumber.GetNumber());
+            PlayerPrefs.Save();
+            highscore = UI.ThreeDNumber.GetNumber();
+        }
+        highScore.SetText(highscore.ToString());
+        Debug.Log("HighScore:" + highScore.text);
+        Invoke("OnFinishWithDelay", delay);
+    }
 
+    void OnFinishWithDelay()
+    {
+        onFinishWithDelay.Invoke();
     }
 }
