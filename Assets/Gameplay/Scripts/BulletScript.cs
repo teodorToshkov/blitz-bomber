@@ -16,11 +16,6 @@ public class BulletScript : MonoBehaviour
 		{
 			// We destroy the floor
 			StartCoroutine (RemoveFloor (other.gameObject));
-
-			// We decrease the number of floors the bullet can destroy before it itself is being detroyed
-			if (endurance-- == 0)
-				// If the number we can detroy is 0, then the bullet's life is over and we destroy it
-				Destroy (gameObject);
 		}
 	}
 
@@ -32,5 +27,10 @@ public class BulletScript : MonoBehaviour
 	{
 		yield return new WaitForSeconds (0.02f);
 		GameManager.RemoveFloor (destroyable);
-	}
+
+        // We decrease the number of floors the bullet can destroy before it itself is being detroyed
+        if (endurance-- == 1)
+            // If the number we can detroy is 0, then the bullet's life is over and we destroy it
+            Destroy(gameObject);
+    }
 }

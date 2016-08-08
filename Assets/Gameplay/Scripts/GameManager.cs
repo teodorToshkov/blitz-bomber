@@ -43,15 +43,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     private BulletScript bullet;                //!< a reference to the bullet __Prefab__ @note Used __only__ in calculating the difficulty
     [SerializeField]
-    private UI.ThreeDText highScore;                //!< a reference to the high score text script
+    private UI.ThreeDText highScore;            //!< a reference to the high score text script
     [SerializeField]
-    private bool _debugMode = false;
+    private bool _debugMode = false;            //!< a mode where the gameplay goes faster and the __dropper__ spawns bullets at set intervals.
 
     [Header("What to do when the game ends?")]
-    public UnityEvent onFinish;
+    public UnityEvent onFinish;                 //!< a UnityEvent which controls what happens when the game is over
 
-    public float delay;
-    public UnityEvent onFinishWithDelay;
+    public float delay;                         //!< the delay after which the __onFinishWithDelay__ is called
+    public UnityEvent onFinishWithDelay;        //!< a UnityEvent which controls what happens __delay__ time after the game is over
 
     public static bool isPlaying;               //!< stores information whether the player playing or not
     public static bool isFinished;              //!< stores information whether the gameplay has or not reached an end i.e. the game is over
@@ -63,11 +63,11 @@ public class GameManager : MonoBehaviour
 										* regardless of whether or not they are currently active in the scene.\n
 										* A floor is never destroyed, a floor is just being set as inactive and reused later.
 										*/
-    public static bool debugMode = false;
+    public static bool debugMode = false;       //!< a static variable for the _debugMode
 
-    public static GameManager instance;
+    public static GameManager instance;         //!< the instance in the Scene of the __GameManager__.
 
-    private float timeSinceLevelLoad = 0;
+    private float timeSinceLevelLoad = 0;       //!< the time after the level has been loaded, excluding the time during which the gameplay has been paused.
 
     //! Initialization
     /*! 
@@ -99,6 +99,7 @@ public class GameManager : MonoBehaviour
             InvokeRepeating("SpawnBullets", 0, 1);
     }
 
+    //! Calls the dropper.Spawn()
     void SpawnBullets()
     {
         dropper.Spawn();
@@ -112,7 +113,7 @@ public class GameManager : MonoBehaviour
             debugMode = _debugMode;
             Time.timeScale = debugMode ? 2 : 1;
             if (debugMode)
-                InvokeRepeating("SpawnBullets", 0, 1);
+                InvokeRepeating("SpawnBullets", 0, 0.1f);
             else CancelInvoke("SpawnBullets");
         }
         // We chech if the game is on pause or not
@@ -241,8 +242,14 @@ public class GameManager : MonoBehaviour
             // We reset the score and reload the level
             UI.ThreeDNumber.ResetNumber();
             Time.timeScale = 1;
-            SceneManager.LoadScene(0);
+            SceneManager.LoadScene("Main", LoadSceneMode.Single);
         }
+    }
+
+    //! A local function which calls GameManager.EndGamePlay()
+    public void _EndGamePlay()
+    {
+        EndGamePlay();
     }
 
     //! We stop everything and say that the gameplay should stop
@@ -253,7 +260,7 @@ public class GameManager : MonoBehaviour
         isPlaying = false;
     }
 
-    //! \todo TO BE IMPLEMENTED
+    //! Sets the highscore and invokes onFinish and the OnFinishWithDelay after the delay which is set.
     public void ShowResult()
     {
         onFinish.Invoke();
@@ -265,12 +272,16 @@ public class GameManager : MonoBehaviour
             highscore = UI.ThreeDNumber.GetNumber();
         }
         highScore.SetText(highscore.ToString());
-        Debug.Log("HighScore:" + highScore.text);
         Invoke("OnFinishWithDelay", delay);
     }
 
+    //! Stops the EveryPlay recording and invokes __onFinishWithDelay__.
+    /*!
+     * We call the EveryPlay.StopRecording here in order to show the capture the game over screen as well.
+     */
     void OnFinishWithDelay()
     {
+        Everyplay.StopRecording();
         onFinishWithDelay.Invoke();
     }
 }

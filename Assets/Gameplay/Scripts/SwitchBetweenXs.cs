@@ -21,7 +21,7 @@ public class SwitchBetweenXs : MonoBehaviour
 			return;
 
 		// We multiply the speed at which the object is moving by the rate at which the gameplay is moving
-		float newSpeed = speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
+		float newSpeed = gamePlaySpeedEffectorFactor == 0 ? speed : speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
 		// We store the current position in a buffer
 		Vector3 newPosition = transform.position;
 		// If the position is less than the minimum allowed we switch the direction at which we are moving the object

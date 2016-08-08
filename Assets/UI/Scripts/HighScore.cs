@@ -1,9 +1,11 @@
 ﻿using UnityEngine;
 using System.Collections;
 
+/*!
+ * \brief A script which Sets the text of the __ThreeDText__ compontent of the __GameObject__ to the _highscore_ __PlayerPref__
+ */
 public class HighScore : MonoBehaviour
 {
-    // Use this for initialization
     void Start()
     {
         (GetComponent<UI.ThreeDText>() as UI.ThreeDText).SetText(PlayerPrefs.GetInt("highscore", 0).ToString());

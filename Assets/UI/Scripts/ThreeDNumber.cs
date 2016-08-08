@@ -124,12 +124,20 @@ namespace UI
         }
 
         /// <summary>
-        /// Plays an animation with a given target position.
+        /// Plays Animation until the number reachers the Plyer Prefference _highscore_
         /// </summary>
-        /// <param name="finalPosition">The position, which we are aiming at.</param>
-        public void PlayAnimation(int finalPosition)
+        public void PlayAnimationToHighScore()
         {
-            targetPosition = finalPosition;
+            PlayAnimation(PlayerPrefs.GetInt("highscore", 0));
+        }
+
+        /// <summary>
+        /// Plays an animation with a given number.
+        /// </summary>
+        /// <param name="finalNumber">The number, which we are aiming at.</param>
+        public void PlayAnimation(int finalNumber)
+        {
+            targetPosition = finalNumber;
 
             startTime = Time.time;
             startPosition = staticNumber;

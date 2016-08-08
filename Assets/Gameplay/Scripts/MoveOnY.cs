@@ -29,12 +29,12 @@ public class MoveOnY : MonoBehaviour
         // We shouldn't change the position if the game is on pause or over
         if (!GameManager.isPlaying || !isMoving)
 			return;
-        
-		// We multiply the speed at which to travel by the rate at which the gameplay should go
-		float newSpeed = speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
 
-		// We use a buffer to set the position to
-		Vector3 newPosition = transform.position;
+        // We multiply the speed at which to travel by the rate at which the gameplay should go
+        float newSpeed = gamePlaySpeedEffectorFactor == 0 ? speed : speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
+
+        // We use a buffer to set the position to
+        Vector3 newPosition = transform.position;
 		// We increase the position on Y by the necessary amount
 		newPosition.y += newSpeed * Time.deltaTime;
 		// And finally we update the object's position
