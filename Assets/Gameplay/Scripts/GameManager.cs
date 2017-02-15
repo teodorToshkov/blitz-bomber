@@ -126,6 +126,12 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    //! Returns the time during which the game has been playing
+    public float GetTimeSinceLevelLoad()
+    {
+        return timeSinceLevelLoad;
+    }
+
     /// <summary>
     /// a local function for pausing the gameplay
     /// </summary>

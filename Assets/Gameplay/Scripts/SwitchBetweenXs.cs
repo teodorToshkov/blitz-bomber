@@ -7,12 +7,13 @@ public class SwitchBetweenXs : MonoBehaviour
 {
 	public float x1; //!< the minimal X value
 	public float x2; //!< the maximal X value
-	[Range(0, 5)]
-	public float speed = 0.5f; //!< the speed at which the object will move
-	public float gamePlaySpeedEffectorFactor = 1f; //!< the factor by which the speed is affected by GameManager.gamePlaySpeed
+    [SerializeField]
+    public AnimationCurve speedCurve; //!< the change in speed of the __gameObject__ throughout time _in minutes_
+    public float gamePlaySpeedEffectorFactor = 1f; //!< the factor by which the speed is affected by GameManager.gamePlaySpeed
 
 	private bool switchDirection = false; //!< marks at which position we are going
-	
+    private float speed; //!< the current speed
+
 	//! Update is called once per frame
 	void Update ()
 	{
@@ -20,10 +21,13 @@ public class SwitchBetweenXs : MonoBehaviour
 		if (!GameManager.isPlaying)
 			return;
 
-		// We multiply the speed at which the object is moving by the rate at which the gameplay is moving
-		float newSpeed = gamePlaySpeedEffectorFactor == 0 ? speed : speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
-		// We store the current position in a buffer
-		Vector3 newPosition = transform.position;
+        // We get the speed at which the 
+        speed = speedCurve.Evaluate(GameManager.instance.GetTimeSinceLevelLoad() / 60);
+
+        // We multiply the speed at which the object is moving by the rate at which the gameplay is moving
+        float newSpeed = gamePlaySpeedEffectorFactor == 0 ? speed : speed * (1 + (GameManager.gamePlaySpeed - 1) * gamePlaySpeedEffectorFactor);
+        // We store the current position in a buffer
+        Vector3 newPosition = transform.position;
 		// If the position is less than the minimum allowed we switch the direction at which we are moving the object
 		if (transform.position.x < (GameManager.debugMode ? x1 - 0.3f : x1))
 			switchDirection = false;
@@ -53,7 +57,6 @@ public class SwitchBetweenXs : MonoBehaviour
 	/// Increases the x2.
 	/// </summary>
 	/// <param name="amount">Amount.</param>
-	/// \todo Make it animated with Interpolate.EaseInOut
 	public void IncreaseX2 (float amount)
 	{
 		x2 += amount;

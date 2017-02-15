@@ -11770,7 +11770,22 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   x1: 7.4
   x2: 9.6
-  speed: 0.5
+  speedCurve:
+    serializedVersion: 2
+    m_Curve:
+    - time: 0
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    - time: 1
+      value: 0.5
+      inSlope: 0
+      outSlope: 0
+      tangentMode: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 0
   gamePlaySpeedEffectorFactor: 0
 --- !u!114 &1720354843
 MonoBehaviour:

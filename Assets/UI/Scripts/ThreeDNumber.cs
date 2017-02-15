@@ -9,19 +9,6 @@ namespace UI
      * 
      * It stores the GameObjects which represent the digits.
      * It controls the score we have in the gameplay.
-     * 
-     * \todo Change the simple __GameObject__ substitution with an animation transition
-     * 		 using an __AnimatorController__ with animations:
-     * 		 - 0 -> 1
-     * 		 - 1 -> 2
-     * 		 - 2 -> 3
-     * 		 - 3 -> 4
-     * 		 - 4 -> 5
-     * 		 - 5 -> 6
-     * 		 - 6 -> 7
-     * 		 - 7 -> 8
-     * 		 - 8 -> 9
-     * 		 - 9 -> 0
      */
     public class ThreeDNumber : MonoBehaviour
     {
