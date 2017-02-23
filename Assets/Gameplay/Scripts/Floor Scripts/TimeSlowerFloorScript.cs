@@ -23,10 +23,14 @@ public class TimeSlowerFloorScript : Floor
     public Color targetBottomColor;
     public Color targetTopColor;
 
+    [HideInInspector]
+    public AudioSource backgroundMusic;
+
     private static int numberOfFloorsDestroyed;	//!< the number of __Floors__ that are currently slowing the time down.
 
     void Start ()
     {
+        backgroundMusic = GameObject.Find("Background Music").GetComponent<AudioSource>();
         background = GameObject.Find("Background").GetComponent<ChangeBackground>();
     }
 
@@ -68,6 +72,8 @@ public class TimeSlowerFloorScript : Floor
         background.ChangeTo(targetBottomColor, targetTopColor);
 
 		Invoke ("Desactivate", time);
+
+        backgroundMusic.pitch = Time.timeScale / 2 + 0.5f;
 	}
 
 	//! Desactivate this instance.
@@ -89,5 +95,7 @@ public class TimeSlowerFloorScript : Floor
         background.ChangeTo(startBottomColor, startTopColor);
 
         gameObject.SetActive (false);
-	}
+
+        backgroundMusic.pitch = Time.timeScale / 2 + 0.5f;
+    }
 }
