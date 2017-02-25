@@ -11,7 +11,11 @@ public class EveryplayPackageImport : AssetPostprocessor
             TextureImporter textureImporter = (TextureImporter) assetImporter;
             if (textureImporter != null)
             {
+                #if UNITY_5_5
+                textureImporter.textureCompression = TextureImporterCompression.Uncompressed;
+                #else
                 textureImporter.textureFormat = TextureImporterFormat.AutomaticTruecolor;
+                #endif
             }
         }
     }

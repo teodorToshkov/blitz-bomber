@@ -442,7 +442,7 @@ PlayerSettings:
   scriptingDefineSymbols:
     1: 
     4: 
-    7: EVERYPLAY_ANDROID
+    7: 
     25: 
   platformArchitecture:
     iOS: 2

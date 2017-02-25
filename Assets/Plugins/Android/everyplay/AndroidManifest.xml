@@ -81,13 +81,16 @@
            android:hardwareAccelerated="false"
            android:screenOrientation="sensor"
            android:windowSoftInputMode="adjustResize" />
-       
-       <service 
+
+      <activity android:name="com.everyplay.Everyplay.device.EveryplayDevice$PermissionActivity"
+          android:theme="@android:style/Theme.Translucent.NoTitleBar"/>
+
+      <service
            android:name="com.everyplay.Everyplay.communication.upload.EveryplayUploadService" />
        
   </application>
   <uses-permission android:name="android.permission.INTERNET" />
-  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+  <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" android:maxSdkVersion="18" />
   <uses-feature android:name="android.hardware.touchscreen" android:required="false" />
   <uses-feature android:name="android.hardware.touchscreen.multitouch" android:required="false" />
   <uses-feature android:name="android.hardware.touchscreen.multitouch.distinct" android:required="false" />

@@ -4,6 +4,7 @@ using System.Collections.Generic;
 
 public class EveryplayRecButtons : MonoBehaviour
 {
+    #if UNITY_ANDROID || UNITY_IPHONE
     public enum ButtonsOrigin
     {
         TopLeft = 0,
@@ -28,8 +29,8 @@ public class EveryplayRecButtons : MonoBehaviour
 
     private class TextureAtlasSrc
     {
-        public Rect atlasRect;
-        public Rect normalizedAtlasRect;
+        public Rect atlasRect = new Rect(0, 0, 0, 0);
+        public Rect normalizedAtlasRect = new Rect(0, 0, 0, 0);
 
         public TextureAtlasSrc(int width, int height, int x, int y, float scale)
         {
@@ -387,12 +388,7 @@ public class EveryplayRecButtons : MonoBehaviour
     private void DrawButton(Button button, Color tintColor)
     {
         Color oldColor = GUI.color;
-        bool isToggleButton = false;
-#if NETFX_CORE
-        isToggleButton = typeof(ToggleButton).GetTypeInfo().IsAssignableFrom(button.GetTypeInfo());
-#else
-        isToggleButton = typeof(ToggleButton).IsAssignableFrom(button.GetType());
-#endif
+        bool isToggleButton = typeof(ToggleButton).IsAssignableFrom(button.GetType());
 
         if (isToggleButton)
         {
@@ -486,4 +482,6 @@ public class EveryplayRecButtons : MonoBehaviour
 
         return 1.0f;
     }
+
+    #endif
 }

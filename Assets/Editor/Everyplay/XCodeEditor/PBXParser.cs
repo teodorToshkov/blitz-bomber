@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Text;
 using System.Text.RegularExpressions;
 
-namespace Everyplay.XCodeEditor
+namespace EveryplayEditor.XCodeEditor
 {
 public class PBXParser
 {

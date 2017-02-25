@@ -8,6 +8,7 @@ public class EveryplayLegacyCleanup
 {
     private static string[] filesToRemove =
     {
+        "Plugins/Everyplay/Scripts/EveryplayLegacy.cs",
         "Editor/PostprocessBuildPlayer_EveryplaySDK",
         "Editor/UpdateXcodeEveryplay.pyc",
         "Plugins/iOS/EveryplayGlesSupport.mm",

@@ -12,7 +12,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
 using UnityEditor.Callbacks;
-using Everyplay.XCodeEditor;
+using EveryplayEditor.XCodeEditor;
 
 public static class EveryplayPostprocessor
 {
@@ -43,6 +43,15 @@ public static class EveryplayPostprocessor
     [PostProcessBuild(1080)]
     public static void OnPostProcessBuild(BuildTarget target, string path)
     {
+        if (path.StartsWith("./") || !path.StartsWith("/"))   // Fix three erroneous path cases on Unity 5.4f03
+        {
+            path = Path.Combine(Application.dataPath.Replace("Assets", ""), path.Replace("./", ""));
+        }
+        else if (path.Contains("./"))
+        {
+            path = path.Replace("./", "");
+        }
+
         EveryplaySettings settings = EveryplaySettingsEditor.LoadEveryplaySettings();
 
         if (settings != null)
@@ -77,6 +86,15 @@ public static class EveryplayPostprocessor
     [PostProcessBuild(-10)]
     public static void OnPostProcessBuildEarly(BuildTarget target, string path)
     {
+        if (path.StartsWith("./") || !path.StartsWith("/"))   // Fix three erroneous path cases on Unity 5.4f03
+        {
+            path = Path.Combine(Application.dataPath.Replace("Assets", ""), path.Replace("./", ""));
+        }
+        else if (path.Contains("./"))
+        {
+            path = path.Replace("./", "");
+        }
+
         EveryplayLegacyCleanup.Clean(false);
 
         if (target == kBuildTarget_iOS || target == BuildTarget.Android)
@@ -212,8 +230,7 @@ public static class EveryplayPostprocessor
 
     private static void ProcessXCodeProject(string path)
     {
-        Everyplay.XCodeEditor.XCProject project = new Everyplay.XCodeEditor.XCProject(path);
-
+        XCProject project = new XCProject(path);
         string modsPath = System.IO.Path.Combine(path, "Everyplay");
         string[] files = System.IO.Directory.GetFiles(modsPath, "*.projmods", System.IO.SearchOption.AllDirectories);
 
@@ -244,6 +261,51 @@ public static class EveryplayPostprocessor
 
             if (dict != null)
             {
+                // Add camera usage description for iOS 10
+                PListItem cameraUsageDescription = GetPlistItem(dict, "NSCameraUsageDescription");
+
+                if (cameraUsageDescription == null)
+                {
+                    XmlElement key = xmlDocument.CreateElement("key");
+                    key.InnerText = "NSCameraUsageDescription";
+
+                    XmlElement str = xmlDocument.CreateElement("string");
+                    str.InnerText = "Everyplay requires access to the camera";
+
+                    dict.AppendChild(key);
+                    dict.AppendChild(str);
+                }
+
+                // Add microphone usage description for iOS 10
+                PListItem microphoneUsageDescription = GetPlistItem(dict, "NSMicrophoneUsageDescription");
+
+                if (microphoneUsageDescription == null)
+                {
+                    XmlElement key = xmlDocument.CreateElement("key");
+                    key.InnerText = "NSMicrophoneUsageDescription";
+
+                    XmlElement str = xmlDocument.CreateElement("string");
+                    str.InnerText = "Everyplay requires access to the microphone";
+
+                    dict.AppendChild(key);
+                    dict.AppendChild(str);
+                }
+
+                // Add photo library usage description for iOS 10
+                PListItem photoLibraryUsageDescription = GetPlistItem(dict, "NSPhotoLibraryUsageDescription");
+
+                if (photoLibraryUsageDescription == null)
+                {
+                    XmlElement key = xmlDocument.CreateElement("key");
+                    key.InnerText = "NSPhotoLibraryUsageDescription";
+
+                    XmlElement str = xmlDocument.CreateElement("string");
+                    str.InnerText = "Everyplay requires access to the photo library";
+
+                    dict.AppendChild(key);
+                    dict.AppendChild(str);
+                }
+
                 // Add Facebook application id if not defined
 
                 PListItem facebookAppId = GetPlistItem(dict, "FacebookAppID");
@@ -276,6 +338,19 @@ public static class EveryplayPostprocessor
 
                 AddUrlScheme(xmlDocument, bundleUrlTypes.itemValueNode, UrlSchemePrefixFB + clientId);
                 AddUrlScheme(xmlDocument, bundleUrlTypes.itemValueNode, UrlSchemePrefixEP + clientId);
+                PListItem appQuerySchemes = GetPlistItem(dict, "LSApplicationQueriesSchemes");
+                if (appQuerySchemes == null)
+                {
+                    XmlElement key = xmlDocument.CreateElement("key");
+                    key.InnerText = "LSApplicationQueriesSchemes";
+                    XmlElement array = xmlDocument.CreateElement("array");
+                    XmlElement str = xmlDocument.CreateElement("string");
+                    str.InnerText = "everyplay";
+                    array.AppendChild(str);
+                    dict.AppendChild(key);
+                    dict.AppendChild(array);
+                    //appQuerySchemes = new PListItem(dict.AppendChild(key), dict.AppendChild(array));
+                }
 
                 xmlDocument.Save(file);
 

@@ -1,7 +1,7 @@
 using UnityEngine;
 using System.Collections;
 
-namespace Everyplay.XCodeEditor
+namespace EveryplayEditor.XCodeEditor
 {
 public class XCTarget : System.IDisposable
 {

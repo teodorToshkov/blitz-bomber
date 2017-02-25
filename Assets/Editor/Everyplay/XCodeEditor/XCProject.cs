@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Text.RegularExpressions;
 
-namespace Everyplay.XCodeEditor
+namespace EveryplayEditor.XCodeEditor
 {
 public partial class XCProject : System.IDisposable
 {
