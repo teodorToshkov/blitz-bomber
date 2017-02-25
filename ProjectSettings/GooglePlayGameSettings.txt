@@ -1,5 +1,5 @@
-lastUpgrade=00933
-proj.pluginVersion=0.9.33
+lastUpgrade=00936
+proj.pluginVersion=0.9.36
 proj.AppId=854460848275
 and.BundleId=com.whgames.Blitz
 proj.classDir=Assets
